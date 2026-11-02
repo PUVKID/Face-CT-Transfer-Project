@@ -1,0 +1,22 @@
+{
+  "id": "inference_batch",
+  "hypothesis": "배치 두 개에서 각 입력의 출력 형상을 유지한다",
+  "started_utc": "2026-11-02T19:34:30.722776+00:00",
+  "status": "pass",
+  "details": {
+    "features_shape": [
+      2,
+      512
+    ],
+    "logits_shape": [
+      2,
+      3
+    ],
+    "feature_l2": [
+      12.001843452453613,
+      11.369329452514648
+    ]
+  },
+  "peak_cuda_allocated_bytes": 326283776,
+  "elapsed_seconds": 0.09026039997115731
+}

@@ -1,0 +1,11 @@
+{
+  "id": "missing_checkpoint",
+  "hypothesis": "없는 가중치를 무작위 초기화로 대체하지 않는다",
+  "started_utc": "2026-11-02T19:34:36.644024+00:00",
+  "status": "pass",
+  "details": {
+    "expected_rejection": "FileNotFoundError"
+  },
+  "peak_cuda_allocated_bytes": 332073472,
+  "elapsed_seconds": 0.03484010009560734
+}

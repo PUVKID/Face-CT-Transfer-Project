@@ -1,0 +1,20 @@
+{
+  "id": "resize_non_square",
+  "hypothesis": "직사각형 입력을 명시된 112 정사각형으로 재표본화한다",
+  "started_utc": "2026-11-02T19:34:29.933929+00:00",
+  "status": "pass",
+  "details": {
+    "original_shape": [
+      3,
+      60,
+      180
+    ],
+    "output_shape": [
+      3,
+      112,
+      112
+    ]
+  },
+  "peak_cuda_allocated_bytes": 263916032,
+  "elapsed_seconds": 0.030289300018921494
+}

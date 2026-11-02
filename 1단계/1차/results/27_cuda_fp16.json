@@ -1,0 +1,16 @@
+{
+  "id": "cuda_fp16",
+  "hypothesis": "CUDA 반정밀도 자동 혼합 추론에서 유한 출력이 나온다",
+  "started_utc": "2026-11-02T19:34:36.945385+00:00",
+  "status": "pass",
+  "details": {
+    "output_dtype": "torch.float16",
+    "shape": [
+      2,
+      3
+    ],
+    "device": "cuda:0"
+  },
+  "peak_cuda_allocated_bytes": 357666304,
+  "elapsed_seconds": 0.2604190999409184
+}

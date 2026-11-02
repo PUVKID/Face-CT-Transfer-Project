@@ -1,0 +1,12 @@
+{
+  "id": "reject_shape",
+  "hypothesis": "채널 차원이 빠진 입력을 거부한다",
+  "started_utc": "2026-11-02T19:34:30.300984+00:00",
+  "status": "pass",
+  "details": {
+    "expected_rejection": "ValueError",
+    "message": "입력은 비어 있지 않은 1 또는 3 채널 CHW여야 합니다"
+  },
+  "peak_cuda_allocated_bytes": 263916032,
+  "elapsed_seconds": 0.021933299954980612
+}

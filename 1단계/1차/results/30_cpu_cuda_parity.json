@@ -1,0 +1,13 @@
+{
+  "id": "cpu_cuda_parity",
+  "hypothesis": "CPU와 CUDA 단정밀도 추론이 명시된 허용 오차 내에서 일치한다",
+  "started_utc": "2026-11-02T19:34:37.590246+00:00",
+  "status": "pass",
+  "details": {
+    "max_abs_difference": 3.725290298461914e-06,
+    "atol": 0.001,
+    "rtol": 0.001
+  },
+  "peak_cuda_allocated_bytes": 358669824,
+  "elapsed_seconds": 0.9427379999542609
+}

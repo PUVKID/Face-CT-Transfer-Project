@@ -1,0 +1,11 @@
+{
+  "id": "mismatch_checkpoint",
+  "hypothesis": "불일치 가중치 키를 엄격 적재에서 거부한다",
+  "started_utc": "2026-11-02T19:34:36.701661+00:00",
+  "status": "pass",
+  "details": {
+    "expected_rejection": "RuntimeError"
+  },
+  "peak_cuda_allocated_bytes": 332073472,
+  "elapsed_seconds": 0.042804299970157444
+}

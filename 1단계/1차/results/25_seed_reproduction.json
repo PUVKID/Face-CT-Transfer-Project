@@ -1,0 +1,11 @@
+{
+  "id": "seed_reproduction",
+  "hypothesis": "동일 시드에서 헤드 초기값을 재현한다",
+  "started_utc": "2026-11-02T19:34:36.781468+00:00",
+  "status": "pass",
+  "details": {
+    "equal_initial_weights": true
+  },
+  "peak_cuda_allocated_bytes": 332073472,
+  "elapsed_seconds": 0.03477269993163645
+}

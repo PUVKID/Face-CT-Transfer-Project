@@ -1,0 +1,13 @@
+{
+  "id": "input_sensitivity",
+  "hypothesis": "서로 다른 합성 입력의 특징이 구별된다",
+  "started_utc": "2026-11-02T19:34:31.035299+00:00",
+  "status": "pass",
+  "details": {
+    "max_abs_difference": 1.4024741649627686,
+    "atol": 0.0001,
+    "rtol": 0.0001
+  },
+  "peak_cuda_allocated_bytes": 326034944,
+  "elapsed_seconds": 0.07521669997368008
+}

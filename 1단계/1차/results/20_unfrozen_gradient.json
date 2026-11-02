@@ -1,0 +1,15 @@
+{
+  "id": "unfrozen_gradient",
+  "hypothesis": "동결 해제 후 백본에 유한 경사가 도달한다",
+  "started_utc": "2026-11-02T19:34:31.701074+00:00",
+  "status": "pass",
+  "details": {
+    "loss": 1.3271234035491943,
+    "head_gradient_norm": 18.295499801635742,
+    "backbone_gradient_tensors": 458,
+    "head_max_update": 0.0,
+    "bn_buffer_count": 459
+  },
+  "peak_cuda_allocated_bytes": 816833536,
+  "elapsed_seconds": 0.2887339999433607
+}

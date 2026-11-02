@@ -1,0 +1,15 @@
+{
+  "id": "head_gradient",
+  "hypothesis": "동결 백본 위의 세 클래스 헤드에 유한 경사가 도달한다",
+  "started_utc": "2026-11-02T19:34:31.433567+00:00",
+  "status": "pass",
+  "details": {
+    "loss": 1.0388492345809937,
+    "head_gradient_norm": 5.686844825744629,
+    "backbone_gradient_tensors": 0,
+    "head_max_update": 0.0,
+    "bn_buffer_count": 459
+  },
+  "peak_cuda_allocated_bytes": 360206336,
+  "elapsed_seconds": 0.11431299999821931
+}

@@ -1,0 +1,12 @@
+{
+  "id": "rgb_endpoints",
+  "hypothesis": "8비트 RGB 끝값이 -1과 1로 정규화된다",
+  "started_utc": "2026-11-02T19:34:29.773863+00:00",
+  "status": "pass",
+  "details": {
+    "min": -1.0,
+    "max": 1.0
+  },
+  "peak_cuda_allocated_bytes": 263916032,
+  "elapsed_seconds": 0.044518399983644485
+}

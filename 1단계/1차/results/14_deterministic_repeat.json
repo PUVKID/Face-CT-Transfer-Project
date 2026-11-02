@@ -1,0 +1,13 @@
+{
+  "id": "deterministic_repeat",
+  "hypothesis": "동일 입력 반복 추론 결과가 허용 오차 내에서 같다",
+  "started_utc": "2026-11-02T19:34:30.934935+00:00",
+  "status": "pass",
+  "details": {
+    "max_abs_difference": 0.0,
+    "atol": 0.0001,
+    "rtol": 0.0001
+  },
+  "peak_cuda_allocated_bytes": 325884416,
+  "elapsed_seconds": 0.07885050005279481
+}

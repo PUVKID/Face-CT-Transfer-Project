@@ -1,0 +1,15 @@
+{
+  "id": "refreeze",
+  "hypothesis": "동결 해제 뒤 재동결하면 경사와 BN 상태가 다시 잠긴다",
+  "started_utc": "2026-11-02T19:34:32.001106+00:00",
+  "status": "pass",
+  "details": {
+    "loss": 1.0388492345809937,
+    "head_gradient_norm": 5.686844825744629,
+    "backbone_gradient_tensors": 0,
+    "head_max_update": 0.0,
+    "bn_buffer_count": 459
+  },
+  "peak_cuda_allocated_bytes": 360206336,
+  "elapsed_seconds": 0.08467999997083098
+}

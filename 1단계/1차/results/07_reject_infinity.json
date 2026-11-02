@@ -1,0 +1,12 @@
+{
+  "id": "reject_infinity",
+  "hypothesis": "무한대 입력을 추론 전에 거부한다",
+  "started_utc": "2026-11-02T19:34:30.155773+00:00",
+  "status": "pass",
+  "details": {
+    "expected_rejection": "ValueError",
+    "message": "실수 입력은 유한한 [0,1] 범위여야 합니다"
+  },
+  "peak_cuda_allocated_bytes": 263916032,
+  "elapsed_seconds": 0.025760299991816282
+}

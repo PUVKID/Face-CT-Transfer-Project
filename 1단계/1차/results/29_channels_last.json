@@ -1,0 +1,12 @@
+{
+  "id": "channels_last",
+  "hypothesis": "channels_last 메모리 배치의 결과가 기본 배치와 일치한다",
+  "started_utc": "2026-11-02T19:34:37.468267+00:00",
+  "status": "unsupported",
+  "details": {
+    "unsupported": "공식 백본의 view 기반 Flatten이 channels_last를 지원하지 않음",
+    "error": "view size is not compatible with input tensor's size and stride (at least one dimension spans across two contiguous subspaces). Use .reshape(...) instead."
+  },
+  "peak_cuda_allocated_bytes": 378369536,
+  "elapsed_seconds": 0.09695599996484816
+}

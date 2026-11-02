@@ -1,0 +1,15 @@
+{
+  "id": "grayscale_replication",
+  "hypothesis": "단일 채널 의료 입력이 세 채널로 동일하게 복제된다",
+  "started_utc": "2026-11-02T19:34:29.866217+00:00",
+  "status": "pass",
+  "details": {
+    "shape": [
+      3,
+      112,
+      112
+    ]
+  },
+  "peak_cuda_allocated_bytes": 263916032,
+  "elapsed_seconds": 0.03484470001421869
+}

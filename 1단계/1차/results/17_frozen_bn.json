@@ -1,0 +1,15 @@
+{
+  "id": "frozen_bn",
+  "hypothesis": "동결 훈련에서 백본 배치 정규화 통계가 보존된다",
+  "started_utc": "2026-11-02T19:34:31.312184+00:00",
+  "status": "pass",
+  "details": {
+    "loss": 1.0388492345809937,
+    "head_gradient_norm": 5.686844825744629,
+    "backbone_gradient_tensors": 0,
+    "head_max_update": 0.0,
+    "bn_buffer_count": 459
+  },
+  "peak_cuda_allocated_bytes": 360206336,
+  "elapsed_seconds": 0.09616770001593977
+}

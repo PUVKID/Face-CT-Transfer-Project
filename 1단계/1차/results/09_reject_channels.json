@@ -1,0 +1,12 @@
+{
+  "id": "reject_channels",
+  "hypothesis": "1 또는 3 이외 채널을 거부한다",
+  "started_utc": "2026-11-02T19:34:30.255952+00:00",
+  "status": "pass",
+  "details": {
+    "expected_rejection": "ValueError",
+    "message": "입력은 비어 있지 않은 1 또는 3 채널 CHW여야 합니다"
+  },
+  "peak_cuda_allocated_bytes": 263916032,
+  "elapsed_seconds": 0.02253219997510314
+}

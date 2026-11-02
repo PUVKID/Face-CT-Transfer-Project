@@ -1,0 +1,13 @@
+{
+  "id": "batch_independence",
+  "hypothesis": "평가 모드에서 배치 동반 입력이 기존 샘플 출력을 바꾸지 않는다",
+  "started_utc": "2026-11-02T19:34:30.822323+00:00",
+  "status": "pass",
+  "details": {
+    "max_abs_difference": 4.76837158203125e-07,
+    "atol": 0.0001,
+    "rtol": 0.0001
+  },
+  "peak_cuda_allocated_bytes": 326285824,
+  "elapsed_seconds": 0.09632230002898723
+}

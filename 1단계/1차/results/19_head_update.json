@@ -1,0 +1,15 @@
+{
+  "id": "head_update",
+  "hypothesis": "헤드 최적화 한 단계가 실제 파라미터를 바꾼다",
+  "started_utc": "2026-11-02T19:34:31.578767+00:00",
+  "status": "pass",
+  "details": {
+    "loss": 1.0388492345809937,
+    "head_gradient_norm": 5.686844825744629,
+    "backbone_gradient_tensors": 0,
+    "head_max_update": 0.005065307021141052,
+    "bn_buffer_count": 459
+  },
+  "peak_cuda_allocated_bytes": 360206336,
+  "elapsed_seconds": 0.11583620007149875
+}

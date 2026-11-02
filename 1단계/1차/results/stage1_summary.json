@@ -1,0 +1,457 @@
+{
+  "schema_version": 1,
+  "purpose": "synthetic_engineering_diagnostics_not_clinical_accuracy",
+  "started_utc": "2026-11-02T19:34:29.772839+00:00",
+  "checkpoint": {
+    "sha256": "e312d79222d28027f146ed495e182e48fe0dddf404cdbbdabcccdbdd07cc3758",
+    "state_key": null,
+    "removed_prefix": "net.",
+    "tensor_count": 917,
+    "strict": true,
+    "weights_only": true,
+    "model": "AdaFace IR101 WebFace12M",
+    "revision": "54f602a0737bd1ee4a4e7e9fd089a485f397fefd",
+    "source_sha256": "e31be55c60b538c15151887e911b7535e2f0e1114a13427ba06483e1cd2a63f9",
+    "color_order": "RGB",
+    "input_shape": [
+      3,
+      112,
+      112
+    ],
+    "normalization": "(x - 0.5) / 0.5"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "device": "cuda",
+    "threads": 4,
+    "gpu": "NVIDIA GeForce RTX 4090"
+  },
+  "seed": 20261103,
+  "cases": [
+    {
+      "id": "rgb_endpoints",
+      "hypothesis": "8비트 RGB 끝값이 -1과 1로 정규화된다",
+      "started_utc": "2026-11-02T19:34:29.773863+00:00",
+      "status": "pass",
+      "details": {
+        "min": -1.0,
+        "max": 1.0
+      },
+      "peak_cuda_allocated_bytes": 263916032,
+      "elapsed_seconds": 0.044518399983644485
+    },
+    {
+      "id": "grayscale_replication",
+      "hypothesis": "단일 채널 의료 입력이 세 채널로 동일하게 복제된다",
+      "started_utc": "2026-11-02T19:34:29.866217+00:00",
+      "status": "pass",
+      "details": {
+        "shape": [
+          3,
+          112,
+          112
+        ]
+      },
+      "peak_cuda_allocated_bytes": 263916032,
+      "elapsed_seconds": 0.03484470001421869
+    },
+    {
+      "id": "resize_non_square",
+      "hypothesis": "직사각형 입력을 명시된 112 정사각형으로 재표본화한다",
+      "started_utc": "2026-11-02T19:34:29.933929+00:00",
+      "status": "pass",
+      "details": {
+        "original_shape": [
+          3,
+          60,
+          180
+        ],
+        "output_shape": [
+          3,
+          112,
+          112
+        ]
+      },
+      "peak_cuda_allocated_bytes": 263916032,
+      "elapsed_seconds": 0.030289300018921494
+    },
+    {
+      "id": "bgr_explicit",
+      "hypothesis": "명시적 BGR 설정만 채널을 뒤집는다",
+      "started_utc": "2026-11-02T19:34:29.989145+00:00",
+      "status": "pass",
+      "details": {
+        "explicit_channel_reversal": true
+      },
+      "peak_cuda_allocated_bytes": 263916032,
+      "elapsed_seconds": 0.029599000001326203
+    },
+    {
+      "id": "float_normalization",
+      "hypothesis": "0부터 1 실수 입력의 중간값이 0으로 정규화된다",
+      "started_utc": "2026-11-02T19:34:30.045621+00:00",
+      "status": "pass",
+      "details": {
+        "normalized_midpoint": 0.0
+      },
+      "peak_cuda_allocated_bytes": 263916032,
+      "elapsed_seconds": 0.03073429991491139
+    },
+    {
+      "id": "reject_nan",
+      "hypothesis": "NaN 입력을 추론 전에 거부한다",
+      "started_utc": "2026-11-02T19:34:30.100702+00:00",
+      "status": "pass",
+      "details": {
+        "expected_rejection": "ValueError",
+        "message": "실수 입력은 유한한 [0,1] 범위여야 합니다"
+      },
+      "peak_cuda_allocated_bytes": 263916032,
+      "elapsed_seconds": 0.026235800003632903
+    },
+    {
+      "id": "reject_infinity",
+      "hypothesis": "무한대 입력을 추론 전에 거부한다",
+      "started_utc": "2026-11-02T19:34:30.155773+00:00",
+      "status": "pass",
+      "details": {
+        "expected_rejection": "ValueError",
+        "message": "실수 입력은 유한한 [0,1] 범위여야 합니다"
+      },
+      "peak_cuda_allocated_bytes": 263916032,
+      "elapsed_seconds": 0.025760299991816282
+    },
+    {
+      "id": "reject_range",
+      "hypothesis": "입력 범위를 벗어난 실수를 거부한다",
+      "started_utc": "2026-11-02T19:34:30.200911+00:00",
+      "status": "pass",
+      "details": {
+        "expected_rejection": "ValueError",
+        "message": "실수 입력은 유한한 [0,1] 범위여야 합니다"
+      },
+      "peak_cuda_allocated_bytes": 263916032,
+      "elapsed_seconds": 0.02868809993378818
+    },
+    {
+      "id": "reject_channels",
+      "hypothesis": "1 또는 3 이외 채널을 거부한다",
+      "started_utc": "2026-11-02T19:34:30.255952+00:00",
+      "status": "pass",
+      "details": {
+        "expected_rejection": "ValueError",
+        "message": "입력은 비어 있지 않은 1 또는 3 채널 CHW여야 합니다"
+      },
+      "peak_cuda_allocated_bytes": 263916032,
+      "elapsed_seconds": 0.02253219997510314
+    },
+    {
+      "id": "reject_shape",
+      "hypothesis": "채널 차원이 빠진 입력을 거부한다",
+      "started_utc": "2026-11-02T19:34:30.300984+00:00",
+      "status": "pass",
+      "details": {
+        "expected_rejection": "ValueError",
+        "message": "입력은 비어 있지 않은 1 또는 3 채널 CHW여야 합니다"
+      },
+      "peak_cuda_allocated_bytes": 263916032,
+      "elapsed_seconds": 0.021933299954980612
+    },
+    {
+      "id": "inference_single",
+      "hypothesis": "단일 입력에서 유한한 512개 특징과 세 로짓을 계산한다",
+      "started_utc": "2026-11-02T19:34:30.356024+00:00",
+      "status": "pass",
+      "details": {
+        "features_shape": [
+          1,
+          512
+        ],
+        "logits_shape": [
+          1,
+          3
+        ],
+        "feature_l2": [
+          12.001843452453613
+        ]
+      },
+      "peak_cuda_allocated_bytes": 298420736,
+      "elapsed_seconds": 0.3507822999963537
+    },
+    {
+      "id": "inference_batch",
+      "hypothesis": "배치 두 개에서 각 입력의 출력 형상을 유지한다",
+      "started_utc": "2026-11-02T19:34:30.722776+00:00",
+      "status": "pass",
+      "details": {
+        "features_shape": [
+          2,
+          512
+        ],
+        "logits_shape": [
+          2,
+          3
+        ],
+        "feature_l2": [
+          12.001843452453613,
+          11.369329452514648
+        ]
+      },
+      "peak_cuda_allocated_bytes": 326283776,
+      "elapsed_seconds": 0.09026039997115731
+    },
+    {
+      "id": "batch_independence",
+      "hypothesis": "평가 모드에서 배치 동반 입력이 기존 샘플 출력을 바꾸지 않는다",
+      "started_utc": "2026-11-02T19:34:30.822323+00:00",
+      "status": "pass",
+      "details": {
+        "max_abs_difference": 4.76837158203125e-07,
+        "atol": 0.0001,
+        "rtol": 0.0001
+      },
+      "peak_cuda_allocated_bytes": 326285824,
+      "elapsed_seconds": 0.09632230002898723
+    },
+    {
+      "id": "deterministic_repeat",
+      "hypothesis": "동일 입력 반복 추론 결과가 허용 오차 내에서 같다",
+      "started_utc": "2026-11-02T19:34:30.934935+00:00",
+      "status": "pass",
+      "details": {
+        "max_abs_difference": 0.0,
+        "atol": 0.0001,
+        "rtol": 0.0001
+      },
+      "peak_cuda_allocated_bytes": 325884416,
+      "elapsed_seconds": 0.07885050005279481
+    },
+    {
+      "id": "input_sensitivity",
+      "hypothesis": "서로 다른 합성 입력의 특징이 구별된다",
+      "started_utc": "2026-11-02T19:34:31.035299+00:00",
+      "status": "pass",
+      "details": {
+        "max_abs_difference": 1.4024741649627686,
+        "atol": 0.0001,
+        "rtol": 0.0001
+      },
+      "peak_cuda_allocated_bytes": 326034944,
+      "elapsed_seconds": 0.07521669997368008
+    },
+    {
+      "id": "frozen_gradient",
+      "hypothesis": "동결 시 백본에 경사가 쌓이지 않는다",
+      "started_utc": "2026-11-02T19:34:31.149159+00:00",
+      "status": "pass",
+      "details": {
+        "loss": 1.0388492345809937,
+        "head_gradient_norm": 5.686844825744629,
+        "backbone_gradient_tensors": 0,
+        "head_max_update": 0.0,
+        "bn_buffer_count": 459
+      },
+      "peak_cuda_allocated_bytes": 332158464,
+      "elapsed_seconds": 0.12281689990777522
+    },
+    {
+      "id": "frozen_bn",
+      "hypothesis": "동결 훈련에서 백본 배치 정규화 통계가 보존된다",
+      "started_utc": "2026-11-02T19:34:31.312184+00:00",
+      "status": "pass",
+      "details": {
+        "loss": 1.0388492345809937,
+        "head_gradient_norm": 5.686844825744629,
+        "backbone_gradient_tensors": 0,
+        "head_max_update": 0.0,
+        "bn_buffer_count": 459
+      },
+      "peak_cuda_allocated_bytes": 360206336,
+      "elapsed_seconds": 0.09616770001593977
+    },
+    {
+      "id": "head_gradient",
+      "hypothesis": "동결 백본 위의 세 클래스 헤드에 유한 경사가 도달한다",
+      "started_utc": "2026-11-02T19:34:31.433567+00:00",
+      "status": "pass",
+      "details": {
+        "loss": 1.0388492345809937,
+        "head_gradient_norm": 5.686844825744629,
+        "backbone_gradient_tensors": 0,
+        "head_max_update": 0.0,
+        "bn_buffer_count": 459
+      },
+      "peak_cuda_allocated_bytes": 360206336,
+      "elapsed_seconds": 0.11431299999821931
+    },
+    {
+      "id": "head_update",
+      "hypothesis": "헤드 최적화 한 단계가 실제 파라미터를 바꾼다",
+      "started_utc": "2026-11-02T19:34:31.578767+00:00",
+      "status": "pass",
+      "details": {
+        "loss": 1.0388492345809937,
+        "head_gradient_norm": 5.686844825744629,
+        "backbone_gradient_tensors": 0,
+        "head_max_update": 0.005065307021141052,
+        "bn_buffer_count": 459
+      },
+      "peak_cuda_allocated_bytes": 360206336,
+      "elapsed_seconds": 0.11583620007149875
+    },
+    {
+      "id": "unfrozen_gradient",
+      "hypothesis": "동결 해제 후 백본에 유한 경사가 도달한다",
+      "started_utc": "2026-11-02T19:34:31.701074+00:00",
+      "status": "pass",
+      "details": {
+        "loss": 1.3271234035491943,
+        "head_gradient_norm": 18.295499801635742,
+        "backbone_gradient_tensors": 458,
+        "head_max_update": 0.0,
+        "bn_buffer_count": 459
+      },
+      "peak_cuda_allocated_bytes": 816833536,
+      "elapsed_seconds": 0.2887339999433607
+    },
+    {
+      "id": "refreeze",
+      "hypothesis": "동결 해제 뒤 재동결하면 경사와 BN 상태가 다시 잠긴다",
+      "started_utc": "2026-11-02T19:34:32.001106+00:00",
+      "status": "pass",
+      "details": {
+        "loss": 1.0388492345809937,
+        "head_gradient_norm": 5.686844825744629,
+        "backbone_gradient_tensors": 0,
+        "head_max_update": 0.0,
+        "bn_buffer_count": 459
+      },
+      "peak_cuda_allocated_bytes": 360206336,
+      "elapsed_seconds": 0.08467999997083098
+    },
+    {
+      "id": "checkpoint_roundtrip",
+      "hypothesis": "안전하게 저장하고 엄격 재적재한 상태가 동일하다",
+      "started_utc": "2026-11-02T19:34:32.100806+00:00",
+      "status": "pass",
+      "details": {
+        "sha256": "7a8cc67f80af5a32b4ce6df7ef5ed7bd471e3ab1d41c40fa3330f627fcdc7517",
+        "state_key": null,
+        "removed_prefix": "",
+        "tensor_count": 917,
+        "strict": true,
+        "weights_only": true
+      },
+      "peak_cuda_allocated_bytes": 332073472,
+      "elapsed_seconds": 4.511335700051859
+    },
+    {
+      "id": "missing_checkpoint",
+      "hypothesis": "없는 가중치를 무작위 초기화로 대체하지 않는다",
+      "started_utc": "2026-11-02T19:34:36.644024+00:00",
+      "status": "pass",
+      "details": {
+        "expected_rejection": "FileNotFoundError"
+      },
+      "peak_cuda_allocated_bytes": 332073472,
+      "elapsed_seconds": 0.03484010009560734
+    },
+    {
+      "id": "mismatch_checkpoint",
+      "hypothesis": "불일치 가중치 키를 엄격 적재에서 거부한다",
+      "started_utc": "2026-11-02T19:34:36.701661+00:00",
+      "status": "pass",
+      "details": {
+        "expected_rejection": "RuntimeError"
+      },
+      "peak_cuda_allocated_bytes": 332073472,
+      "elapsed_seconds": 0.042804299970157444
+    },
+    {
+      "id": "seed_reproduction",
+      "hypothesis": "동일 시드에서 헤드 초기값을 재현한다",
+      "started_utc": "2026-11-02T19:34:36.781468+00:00",
+      "status": "pass",
+      "details": {
+        "equal_initial_weights": true
+      },
+      "peak_cuda_allocated_bytes": 332073472,
+      "elapsed_seconds": 0.03477269993163645
+    },
+    {
+      "id": "cuda_fp32",
+      "hypothesis": "CUDA 단정밀도 추론에서 유한 출력이 나온다",
+      "started_utc": "2026-11-02T19:34:36.845023+00:00",
+      "status": "pass",
+      "details": {
+        "output_dtype": "torch.float32",
+        "shape": [
+          2,
+          3
+        ],
+        "device": "cuda:0"
+      },
+      "peak_cuda_allocated_bytes": 359838208,
+      "elapsed_seconds": 0.06186229991726577
+    },
+    {
+      "id": "cuda_fp16",
+      "hypothesis": "CUDA 반정밀도 자동 혼합 추론에서 유한 출력이 나온다",
+      "started_utc": "2026-11-02T19:34:36.945385+00:00",
+      "status": "pass",
+      "details": {
+        "output_dtype": "torch.float16",
+        "shape": [
+          2,
+          3
+        ],
+        "device": "cuda:0"
+      },
+      "peak_cuda_allocated_bytes": 357666304,
+      "elapsed_seconds": 0.2604190999409184
+    },
+    {
+      "id": "cuda_bfloat16",
+      "hypothesis": "지원 장치에서 bfloat16 자동 혼합 추론이 동작한다",
+      "started_utc": "2026-11-02T19:34:37.234343+00:00",
+      "status": "pass",
+      "details": {
+        "output_dtype": "torch.bfloat16",
+        "shape": [
+          2,
+          3
+        ],
+        "device": "cuda:0"
+      },
+      "peak_cuda_allocated_bytes": 357666304,
+      "elapsed_seconds": 0.21023379999678582
+    },
+    {
+      "id": "channels_last",
+      "hypothesis": "channels_last 메모리 배치의 결과가 기본 배치와 일치한다",
+      "started_utc": "2026-11-02T19:34:37.468267+00:00",
+      "status": "unsupported",
+      "details": {
+        "unsupported": "공식 백본의 view 기반 Flatten이 channels_last를 지원하지 않음",
+        "error": "view size is not compatible with input tensor's size and stride (at least one dimension spans across two contiguous subspaces). Use .reshape(...) instead."
+      },
+      "peak_cuda_allocated_bytes": 378369536,
+      "elapsed_seconds": 0.09695599996484816
+    },
+    {
+      "id": "cpu_cuda_parity",
+      "hypothesis": "CPU와 CUDA 단정밀도 추론이 명시된 허용 오차 내에서 일치한다",
+      "started_utc": "2026-11-02T19:34:37.590246+00:00",
+      "status": "pass",
+      "details": {
+        "max_abs_difference": 3.725290298461914e-06,
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "peak_cuda_allocated_bytes": 358669824,
+      "elapsed_seconds": 0.9427379999542609
+    }
+  ]
+}

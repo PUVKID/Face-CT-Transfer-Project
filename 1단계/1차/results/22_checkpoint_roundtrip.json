@@ -1,0 +1,16 @@
+{
+  "id": "checkpoint_roundtrip",
+  "hypothesis": "안전하게 저장하고 엄격 재적재한 상태가 동일하다",
+  "started_utc": "2026-11-02T19:34:32.100806+00:00",
+  "status": "pass",
+  "details": {
+    "sha256": "7a8cc67f80af5a32b4ce6df7ef5ed7bd471e3ab1d41c40fa3330f627fcdc7517",
+    "state_key": null,
+    "removed_prefix": "",
+    "tensor_count": 917,
+    "strict": true,
+    "weights_only": true
+  },
+  "peak_cuda_allocated_bytes": 332073472,
+  "elapsed_seconds": 4.511335700051859
+}
