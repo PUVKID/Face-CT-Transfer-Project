@@ -1,0 +1,15 @@
+{
+  "analysis_A": "LUNA25 original-face frozen patient-group binary sevenfold",
+  "analysis_B": "LUNA25 auxiliary adaptation for IQ three-class exploratory only",
+  "initializations": ["face", "luna-adapted"],
+  "scopes": ["frozen", "lastblock", "full"],
+  "seeds": [11, 22, 33, 44, 55],
+  "outer_folds": 7,
+  "fold_seed": 42,
+  "iq_patient_keys": null,
+  "iq_grouping": "exact_decoded_pixels",
+  "lastblock_definition": "backbone.body[-1] only; head trainable",
+  "batchnorm_running_statistics": "fixed",
+  "training_precision": "native bfloat16 AMP for lastblock/full; frozen head and evaluation float32",
+  "budget": "private real GPU benchmark required before run"
+}
