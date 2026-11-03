@@ -1,0 +1,17 @@
+{
+  "benchmark": "LFW",
+  "protocol": "YuNet 독립 검출·5점 정렬; 원저자 aligned input과 구분",
+  "status": "protocol_unmet",
+  "required_unique_images": 7701,
+  "aligned_images": 7631,
+  "failed_images": 70,
+  "detection_alignment_coverage": 0.9909102713933255,
+  "multi_face_images": 511,
+  "required_pairs": 6000,
+  "actual_face_accuracy_measured": false,
+  "face_accuracy": null,
+  "gpu_inference_count": 0,
+  "failed_pairs_dropped": false,
+  "completed_kst": "2026-11-03T14:45:15.572251+09:00",
+  "method_note": "전체 고정 평가쌍 입력 조건 미충족. 검출·정렬 성공률을 얼굴인식 정확도로 사용하지 않습니다."
+}

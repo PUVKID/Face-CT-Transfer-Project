@@ -1,0 +1,35 @@
+{
+  "source_release": "InsightFace MS1MV2 faces_emore.zip의 LFW member",
+  "member": "faces_emore/lfw.bin",
+  "status": "acquired_and_static_inspected",
+  "compressed_bytes": 48100725,
+  "uncompressed_bytes": 64738112,
+  "crc32": "2d7d0c73",
+  "sha256_first_local": "9b711dca71a47fc9f295a28514abe8cc4e457632a8d634264691398c99569593",
+  "official_published_sha256_available": false,
+  "unsafe_deserialization_runs": 0,
+  "image_decode_runs": 0,
+  "face_accuracy": null,
+  "static": {
+    "opcode_count": 30044,
+    "opcode_counts": {
+      "APPENDS": 18,
+      "BINPUT": 256,
+      "BINSTRING": 12000,
+      "EMPTY_LIST": 2,
+      "LONG_BINPUT": 11747,
+      "MARK": 18,
+      "NEWFALSE": 3000,
+      "NEWTRUE": 3000,
+      "PROTO": 1,
+      "STOP": 1,
+      "TUPLE2": 1
+    },
+    "protocol_counts": {
+      "2": 1
+    },
+    "trailing_bytes": 0,
+    "static_global_names": {}
+  },
+  "notice": "획득·정적 구조 확인이며 얼굴 정확도 재현 완료가 아닙니다. 실제 TopoFR 저자 평가 당시 입력 바이트와 동일성은 미확인입니다."
+}

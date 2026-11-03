@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "topofr_revision": "5960a33220968e6f9f74adcffb3f1a4ca31f9a0a",
+  "files": [
+    {
+      "id": "lfw_archive",
+      "name": "lfw.tgz",
+      "url": "https://ndownloader.figshare.com/files/5976018",
+      "size": 180566744,
+      "sha256": "055f7d9c632d7370e6fb4afc7468d40f970c34a80d4c6f50ffec63f5a8d536c0",
+      "target": "data/face_benchmarks/raw/lfw.tgz",
+      "license": "Figshare 배포 CC BY4.0; 원사진 권리 확대 해석 금지"
+    },
+    {
+      "id": "lfw_pairs",
+      "name": "pairs.txt",
+      "url": "https://ndownloader.figshare.com/files/5976006",
+      "size": 155335,
+      "sha256": "ea42330c62c92989f9d7c03237ed5d591365e89b3e649747777b70e692dc1592",
+      "target": "data/face_benchmarks/raw/pairs.txt",
+      "license": "LFW 고정 pair 메타데이터; 재배포하지 않음"
+    },
+    {
+      "id": "topofr_r200",
+      "name": "Glint360K_R200_TopoFR_9784.pt",
+      "url": "https://drive.usercontent.google.com/uc?id=1DXvcksXIaIXoNWxTXPWhLQaKL_aPaBAR&export=download",
+      "drive_id": "1DXvcksXIaIXoNWxTXPWhLQaKL_aPaBAR",
+      "size": 1214223369,
+      "sha256": null,
+      "target": "models/topofr/Glint360K_R200_TopoFR_9784.pt",
+      "license": "저자 공개 연구용 로컬 평가; 체크포인트 별도 라이선스 미확인·재배포 금지"
+    },
+    {
+      "id": "ijb_testsuite",
+      "name": "ijb-testsuite.tar",
+      "url": "https://drive.usercontent.google.com/uc?id=1aC4zf2Bn0xCVH_ZtEuQipR2JvRb1bf8o&export=download",
+      "drive_id": "1aC4zf2Bn0xCVH_ZtEuQipR2JvRb1bf8o",
+      "size": 9169172480,
+      "sha256": null,
+      "target": "data/face_benchmarks/raw/ijb-testsuite.tar",
+      "license": "NIST 원본 CC variants/license CSV 확인 필요; 로컬 검토만·재배포 금지"
+    },
+    {
+      "id": "vendor_backbones___init___py",
+      "name": "backbones/__init__.py",
+      "url": "https://raw.githubusercontent.com/DanJun6737/TopoFR/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/backbones/__init__.py",
+      "size": 7741,
+      "git_blob_sha1": "833e8a3a56ce26e3ea6da900433fe8f0849b59bf",
+      "sha256": null,
+      "target": "models/topofr/vendor/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/backbones/__init__.py",
+      "license": "원저자 코드; FaceChain Apache2 코드와 외부 체크포인트 이용 조건 분리"
+    },
+    {
+      "id": "vendor_backbones_iresnet_py",
+      "name": "backbones/iresnet.py",
+      "url": "https://raw.githubusercontent.com/DanJun6737/TopoFR/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/backbones/iresnet.py",
+      "size": 8040,
+      "git_blob_sha1": "4f6d7409795889a31d9e1a01b55155012ade7c13",
+      "sha256": null,
+      "target": "models/topofr/vendor/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/backbones/iresnet.py",
+      "license": "원저자 코드; FaceChain Apache2 코드와 외부 체크포인트 이용 조건 분리"
+    },
+    {
+      "id": "vendor_backbones_iresnet2060_py",
+      "name": "backbones/iresnet2060.py",
+      "url": "https://raw.githubusercontent.com/DanJun6737/TopoFR/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/backbones/iresnet2060.py",
+      "size": 6708,
+      "git_blob_sha1": "21d1122144d207637d2444cba1f68fe630c89f31",
+      "sha256": null,
+      "target": "models/topofr/vendor/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/backbones/iresnet2060.py",
+      "license": "원저자 코드; FaceChain Apache2 코드와 외부 체크포인트 이용 조건 분리"
+    },
+    {
+      "id": "vendor_backbones_mobilefacenet_py",
+      "name": "backbones/mobilefacenet.py",
+      "url": "https://raw.githubusercontent.com/DanJun6737/TopoFR/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/backbones/mobilefacenet.py",
+      "size": 5591,
+      "git_blob_sha1": "007d136a96202bfa2021e4f88c4bf145dd151992",
+      "sha256": null,
+      "target": "models/topofr/vendor/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/backbones/mobilefacenet.py",
+      "license": "원저자 코드; FaceChain Apache2 코드와 외부 체크포인트 이용 조건 분리"
+    },
+    {
+      "id": "vendor_eval_verification_py",
+      "name": "eval/verification.py",
+      "url": "https://raw.githubusercontent.com/DanJun6737/TopoFR/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/eval/verification.py",
+      "size": 16212,
+      "git_blob_sha1": "e0e922fea08ef0a898ee63c9d4430b0b64f504f7",
+      "sha256": null,
+      "target": "models/topofr/vendor/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/eval/verification.py",
+      "license": "원저자 코드; FaceChain Apache2 코드와 외부 체크포인트 이용 조건 분리"
+    },
+    {
+      "id": "vendor_eval_ijbc_glint360k_py",
+      "name": "eval_ijbc_glint360k.py",
+      "url": "https://raw.githubusercontent.com/DanJun6737/TopoFR/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/eval_ijbc_glint360k.py",
+      "size": 17500,
+      "git_blob_sha1": "f1e7d1af59a934de2846c1b5a0041ec3147162a3",
+      "sha256": null,
+      "target": "models/topofr/vendor/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/eval_ijbc_glint360k.py",
+      "license": "원저자 코드; FaceChain Apache2 코드와 외부 체크포인트 이용 조건 분리"
+    },
+    {
+      "id": "vendor_configs_glint360k_r50_py",
+      "name": "configs/glint360k_r50.py",
+      "url": "https://raw.githubusercontent.com/DanJun6737/TopoFR/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/configs/glint360k_r50.py",
+      "size": 731,
+      "git_blob_sha1": "9b9c84d7b6c15348f460671a0c553e611c53cb56",
+      "sha256": null,
+      "target": "models/topofr/vendor/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/configs/glint360k_r50.py",
+      "license": "원저자 설정 원문; 체크포인트 이용 조건과 분리"
+    },
+    {
+      "id": "vendor_configs_base_py",
+      "name": "configs/base.py",
+      "url": "https://raw.githubusercontent.com/DanJun6737/TopoFR/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/configs/base.py",
+      "size": 896,
+      "git_blob_sha1": "3c2e307c9c3bd3725e65a38bd383784bd7fb871e",
+      "sha256": null,
+      "target": "models/topofr/vendor/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/configs/base.py",
+      "license": "원저자 설정 원문; 체크포인트 이용 조건과 분리"
+    },
+    {
+      "id": "vendor_utils_utils_config_py",
+      "name": "utils/utils_config.py",
+      "url": "https://raw.githubusercontent.com/DanJun6737/TopoFR/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/utils/utils_config.py",
+      "size": 571,
+      "git_blob_sha1": "0c02eaf70fc0140aca7925f621c29a496f491cae",
+      "sha256": null,
+      "target": "models/topofr/vendor/5960a33220968e6f9f74adcffb3f1a4ca31f9a0a/utils/utils_config.py",
+      "license": "원저자 설정 원문; 체크포인트 이용 조건과 분리"
+    },
+    {
+      "id": "yunet",
+      "name": "face_detection_yunet_2023mar.onnx",
+      "url": "https://media.githubusercontent.com/media/opencv/opencv_zoo/48b10fa505aeb51fbd127fc60a5c660040e823b7/models/face_detection_yunet/face_detection_yunet_2023mar.onnx",
+      "size": 232589,
+      "sha256": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4",
+      "target": "models/topofr/alignment/face_detection_yunet_2023mar.onnx",
+      "license": "공식 OpenCV Zoo 해당 폴더 MIT; 고정 revision48b10fa505aeb51fbd127fc60a5c660040e823b7"
+    }
+  ]
+}

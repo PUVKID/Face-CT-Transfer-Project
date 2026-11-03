@@ -1,0 +1,6 @@
+nodeLinker: hoisted
+symlink: false
+packageImportMethod: copy
+storeDir: ../../../work/stage1_revision2/frontend-cache
+cacheDir: ../../../work/stage1_revision2/frontend-cache/metadata
+ignoreScripts: true

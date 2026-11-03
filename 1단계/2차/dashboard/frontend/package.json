@@ -1,0 +1,9 @@
+{
+  "name": "face-benchmark-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "dev": "vite --host 127.0.0.1", "build": "vite build", "test": "node --test src/format.test.js src/useLogs.test.js" },
+  "dependencies": { "react": "19.3.1", "react-dom": "19.3.1", "three": "0.187.0" },
+  "devDependencies": { "vite": "8.3.5" }
+}
