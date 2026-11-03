@@ -1,6 +1,6 @@
 # 실시간 상태 API 계약
 
-평가·획득의 집계 상태를 읽기 전용으로 조회하는 API다. 프런트는 상대 URL을 사용하며 허용한 상태와 로그만 반환한다.
+평가·획득 집계 상태를 읽기 전용으로 조회한다. 프런트는 상대 URL을 사용하고 허용한 상태·로그만 반환한다.
 
 서버는 `127.0.0.1`에만 바인딩한다. 원본 상태는 상위 `work/stage1_revision2/status.json`이며 서버가 허용한 상태·로그만 읽는다. 파일 경로나 명령을 입력하는 API는 없다. 상태 원본이 없거나 갱신 후 30초가 지나면 `stale=true`다. 다운로드·평가 중단과 상태 노후화를 구분한다.
 
@@ -66,6 +66,10 @@ LFW 실행 중 `evaluation.status`는 `running`, 준비 완료는 `ready`, 정�
 기법 상태는 실제 단계 전환에 연결한다. 원본 추출 중 정렬은 `planned`이고 실제 정렬 callback부터 `active`, 전체 성공 뒤 `complete`다. 정렬 조건 미충족은 `paused`와 실제 성공·전체·실패 수·coverage를 표시하며 FP32/반전/LFW는 미적용 `planned`다. 평가 입력 검증 뒤 실제 추론 callback에서 FP32와 반전이 `active`가 되고 전체 특징 처리 뒤 LFW 계산이 `active`가 되며, 정상 평가 반환 뒤에만 이 기법들을 `complete`로 표시한다. 검증된 전체 캐시 재사용은 완료 근거와 신규 추론 없음을 구분하고 이전 정렬 완료 기록은 새 평가의 입력 검증 대기와 구분한다. 실패 종료 때 적용 중 기법은 `failed`가 되며 도달 전 계획은 미적용으로 남는다. IJB-C template 집계와 CT 학습은 이번 LFW 작업에서 `unused`다. 이 상태는 적용 이력이며 정확도 측정을 대신하지 않는다.
 
 다운로드 원소에 `official_digest_verified`와 `verification_basis`를 추가한다. `verified=true`만으로 공식 체크섬 대조나 모델 적재 검증을 뜻하지 않는다. `official_sha256`은 공식 SHA-256 대조, `official_git_blob_sha1`은 고정 저자 소스 객체 대조, `official_size_and_first_acquisition_sha256_no_published_digest`는 공식 길이·최초 로컬 SHA 고정이다. 화면은 이 근거를 구분해야 한다. `model.checkpoint_verified`는 안전 역직렬화·R200 strict 적재·tensor 유한값 검사 전 false다.
+
+공식 MS1MV2 입력 작업은 현재 작업 제목과 alignment 기법명·단계명에 **제공된 정렬 입력 검증**을 명시한다. header·decode 검증 중 active, 전체 성공 또는 결합 검증된 캐시 재사용 뒤 complete이며 이번 작업이 얼굴 검출·5점 정렬을 수행했다고 표시하지 않는다. 검출률과 검출실패수는 해당 없음인 null이고 처리 영상 수만 누적한다. 이전 YuNet coverage를 새 입력 종류에 상속하지 않는다. FP32/flip/LFW 상태는 기존 실제 추론·계산·완료 전환을 따른다.
+
+고정 원본·완료 영수증·SHA/CRC 검증 callback 뒤에만 downloads에공식 bin64738112바이트 완료 행을 추가한다. `official_digest_verified=false`이며 최초 로컬 SHA와 ZIP CRC 대조라는 verification_basis를 유지한다. 네트워크 수신중이나 얼굴 정확도 검증 완료로 표시하지 않는다. input-kind별 LFW 측정 기록은 서로 다른 metric 설명으로 보존한다.
 
 ## GET /api/logs?id=acquisition&limit=100
 

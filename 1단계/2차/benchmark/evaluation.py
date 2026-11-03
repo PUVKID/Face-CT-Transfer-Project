@@ -1,6 +1,7 @@
 """원본 LFW의 독립 정렬과 원저자 지표 규칙을 분리해 실행합니다."""
 import hashlib
 import importlib.metadata
+import io
 import json
 import os
 from pathlib import Path
@@ -11,6 +12,7 @@ from .metrics import lfw_ten_fold
 from .model import load_topofr
 from .protocol import similarity_matrix
 from .safety import digest_file, parse_lfw_pairs, safe_extract_tar
+from . import lfw_primitive
 
 
 ALIGNMENT_PROTOCOL = {
@@ -26,6 +28,86 @@ ALIGNMENT_PROTOCOL = {
     "author_input_equivalence": False,
     "difference": "저자 aligned112/bin의 영상 바이트·정렬과 동일성 미확인. 원본 LFW에 새 검출기를 적용한 독립 재측정입니다."
 }
+
+OFFICIAL_ALIGNMENT_PROTOCOL = {
+    "input_kind": "official-ms1mv2", "source": "공식 MS1MV2 faces_emore/lfw.bin",
+    "images": 12000, "pairs": 6000, "shape": [112, 112, 3], "dtype": "uint8",
+    "pillow_version": "13.0.0", "opencv_version": "4.13.0.92",
+    "decode": "Pillow header만 검사: JPEG/PNG RGB 단일112x112; OpenCV IMREAD_UNCHANGED BGR uint8 → RGB",
+    "resize": False, "realignment": False, "detector_used": False,
+    "pair_order": "연속 두 영상이 한 pair; 공식 pairs.txt의 6000 issame와 10x600 순서 전부 대조",
+    "image_identity_independently_verified": False, "author_input_equivalence": False,
+    "difference": "bin에는 영상 ID가 없어 인물 ID 독립 대조 불가. TopoFR 당시 파일 SHA 및 MXNet과 OpenCV 픽셀 동일성 미확인."
+}
+
+
+def decode_official_image(raw):
+    import cv2
+    from PIL import Image
+    if type(raw) is not bytes or not 0 < len(raw) <= lfw_primitive.MAX_IMAGE_BYTES:
+        raise ValueError("공식 입력 영상의 encoded bytes 상한과 다릅니다")
+    with Image.open(io.BytesIO(raw), formats=["JPEG", "PNG"]) as header:
+        if header.size != (112, 112) or header.mode != "RGB" or getattr(header, "n_frames", 1) != 1:
+            raise ValueError("제공된 정렬 영상 header가 단일 RGB112x112가 아닙니다")
+    bgr = cv2.imdecode(np.frombuffer(raw, dtype=np.uint8), cv2.IMREAD_UNCHANGED)
+    if bgr is None or bgr.shape != (112, 112, 3) or bgr.dtype != np.uint8:
+        raise ValueError("공식 정렬 영상 decode의 shape·dtype가 다릅니다")
+    return cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
+
+
+def _official_binding(stage, pair_hash):
+    return {"input_kind": "official-ms1mv2", "input_sha256": lfw_primitive.FILE_SHA256,
+            "receipt_sha256": lfw_primitive.RECEIPT_SHA256, "pairs_sha256": pair_hash,
+            "protocol": OFFICIAL_ALIGNMENT_PROTOCOL, "source_identity": source_identity(Path(stage) / "2차")}
+
+
+def prepare_official_lfw(stage, progress=None):
+    stage = Path(stage)
+    if (importlib.metadata.version("opencv-python-headless") != OFFICIAL_ALIGNMENT_PROTOCOL["opencv_version"]
+            or importlib.metadata.version("Pillow") != OFFICIAL_ALIGNMENT_PROTOCOL["pillow_version"]):
+        raise ValueError("고정 공식 입력 decoder 배포 버전과 다릅니다")
+    pair_path, pair_hash = _official_file(stage, "lfw_pairs")
+    pairs = parse_lfw_pairs(pair_path.read_text(encoding="utf-8"))
+    images, labels = lfw_primitive.load_verified(stage)
+    lfw_primitive.validate_pair_order(labels, pairs)
+    if progress:
+        progress("official_input", {})
+    binding = _official_binding(stage, pair_hash)
+    cache = stage / "data/face_benchmarks/derived/lfw_official_ms1mv2"
+    cache.mkdir(parents=True, exist_ok=True)
+    cache_path, metadata_path, partial = cache / "aligned.npy", cache / "aligned.json", cache / "aligned.part.npy"
+    if metadata_path.exists():
+        existing = json.loads(metadata_path.read_text(encoding="utf-8"))
+        if (existing.get("binding") == binding and existing.get("status") == "complete"
+                and existing.get("images") == 12000 and existing.get("pairs") == 6000
+                and type(existing.get("labels")) is list and all(type(value) is bool for value in existing["labels"])
+                and existing.get("labels") == labels and existing.get("failed_images") == [] and existing.get("coverage") is None
+                and cache_path.exists() and digest_file(cache_path) == existing.get("cache_sha256")):
+            return existing
+        raise ValueError("다른 조건 또는 미완료 공식 입력 캐시를 덮어쓰지 않습니다")
+    if partial.exists() or cache_path.exists():
+        raise ValueError("이전 공식 입력 부분·완료 배열을 덮어쓰지 않습니다")
+    aligned = np.lib.format.open_memmap(partial, mode="w+", dtype=np.uint8, shape=(12000, 112, 112, 3))
+    started = time.monotonic()
+    try:
+        for index, encoded in enumerate(images):
+            aligned[index] = decode_official_image(encoded)
+            if (index + 1) % 25 == 0 or index + 1 == len(images):
+                aligned.flush()
+                if progress:
+                    progress("provided_alignment", {"completed": index + 1, "total": len(images), "elapsed_seconds": time.monotonic() - started})
+    finally:
+        aligned.flush()
+        aligned._mmap.close()
+    # Windows rename은 존재하는 완료 배열을 덮어쓰지 않습니다.
+    partial.rename(cache_path)
+    evidence = {"binding": binding, "status": "complete", "completed_at": now(), "images": 12000,
+                "successful_images": 12000, "failed_images": [], "coverage": None, "pairs": 6000,
+                "labels": labels, "pair_labels_and_fold_order_verified": True,
+                "image_identity_independently_verified": False, "cache_sha256": digest_file(cache_path),
+                "actual_face_accuracy_measured": False}
+    atomic_json(metadata_path, evidence)
+    return evidence
 
 
 def _json_digest(value):
@@ -120,7 +202,11 @@ def create_yunet_detector(path, expected_sha256):
     return cv2.FaceDetectorYN.create("onnx", np.frombuffer(raw, dtype=np.uint8), np.empty(0, dtype=np.uint8), (250, 250), 0.9, 0.3, 5000, cv2.dnn.DNN_BACKEND_OPENCV, cv2.dnn.DNN_TARGET_CPU)
 
 
-def prepare_lfw(stage, progress=None):
+def prepare_lfw(stage, progress=None, input_kind="yunet"):
+    if input_kind == "official-ms1mv2":
+        return prepare_official_lfw(stage, progress)
+    if input_kind != "yunet":
+        raise ValueError("허용하지 않은 LFW 입력 종류입니다")
     import cv2
     stage = Path(stage)
     if importlib.metadata.version("opencv-python-headless") != ALIGNMENT_PROTOCOL["opencv_version"]:
@@ -184,25 +270,41 @@ def prepare_lfw(stage, progress=None):
     return evidence
 
 
-def evaluate_lfw(stage, device="cuda:0", batch_size=8, progress=None):
+def evaluate_lfw(stage, device="cuda:0", batch_size=8, progress=None, input_kind="yunet"):
     import torch
     if device not in {"cpu", "cuda:0"} or isinstance(batch_size, bool) or batch_size not in {1, 2, 4, 8}:
         raise ValueError("허용하지 않은 평가 장치·batch입니다")
+    if input_kind not in {"yunet", "official-ms1mv2"}:
+        raise ValueError("허용하지 않은 LFW 입력 종류입니다")
+    official = input_kind == "official-ms1mv2"
+    protocol = OFFICIAL_ALIGNMENT_PROTOCOL if official else ALIGNMENT_PROTOCOL
     stage = Path(stage)
-    cache = stage / "data/face_benchmarks/derived/lfw_yunet"
+    cache = stage / ("data/face_benchmarks/derived/lfw_official_ms1mv2" if official else "data/face_benchmarks/derived/lfw_yunet")
     metadata = json.loads((cache / "aligned.json").read_text(encoding="utf-8"))
-    if metadata.get("status") != "complete" or metadata.get("failed_images") or metadata.get("coverage") != 1.0:
+    if metadata.get("status") != "complete" or metadata.get("failed_images") or (metadata.get("coverage") is not None if official else metadata.get("coverage") != 1.0):
         raise ValueError("LFW 정렬 protocol이 충족되지 않아 pair 삭제 없이 평가를 차단합니다")
     cache_path = cache / "aligned.npy"
-    if metadata["binding"].get("source_identity") != source_identity(stage / "2차") or metadata["binding"].get("protocol") != ALIGNMENT_PROTOCOL or digest_file(cache_path) != metadata.get("cache_sha256"):
+    if metadata["binding"].get("source_identity") != source_identity(stage / "2차") or metadata["binding"].get("protocol") != protocol or digest_file(cache_path) != metadata.get("cache_sha256"):
         raise ValueError("정렬 캐시의 소스·조건·해시가 다릅니다")
     pair_path, pair_hash = _official_file(stage, "lfw_pairs")
     if pair_hash != metadata["binding"]["pairs_sha256"]:
         raise ValueError("정렬과 평가 pair 메타데이터가 다릅니다")
     pairs = parse_lfw_pairs(pair_path.read_text(encoding="utf-8"))
-    names = metadata["names"]
-    if names != sorted({name for pair in pairs for name in pair[:2]}):
-        raise ValueError("캐시 영상 ID와 고정 pair 영상이 다릅니다")
+    if official:
+        if metadata["binding"] != _official_binding(stage, pair_hash) or metadata.get("images") != 12000 or metadata.get("pairs") != 6000:
+            raise ValueError("공식 입력 캐시의 결합·영상·pair 수가 다릅니다")
+        _, official_labels = lfw_primitive.load_verified(stage)
+        lfw_primitive.validate_pair_order(official_labels, pairs)
+        lfw_primitive.validate_pair_order(metadata.get("labels", []), pairs)
+        if metadata.get("labels") != official_labels:
+            raise ValueError("공식 입력 캐시의 label 순서가 원본과 다릅니다")
+        if progress:
+            progress("official_input", {})
+        names = list(range(12000))
+    else:
+        names = metadata["names"]
+        if names != sorted({name for pair in pairs for name in pair[:2]}):
+            raise ValueError("캐시 영상 ID와 고정 pair 영상이 다릅니다")
     model, model_evidence = load_topofr(stage)
     if device.startswith("cuda") and not torch.cuda.is_available():
         raise ValueError("CUDA 평가 장치를 사용할 수 없습니다")
@@ -215,6 +317,8 @@ def evaluate_lfw(stage, device="cuda:0", batch_size=8, progress=None):
     features_path = cache / "features.npy"
     resume_path = cache / "features_resume.json"
     binding = {"source_identity": source_identity(stage / "2차"), "checkpoint_sha256": model_evidence["checkpoint_sha256"], "cache_sha256": metadata["cache_sha256"], "pair_sha256": pair_hash, "torch_version": str(torch.__version__), "device": device, "batch_size": batch_size, "precision": "float32"}
+    if official:
+        binding.update(input_kind=input_kind, input_sha256=lfw_primitive.FILE_SHA256, receipt_sha256=lfw_primitive.RECEIPT_SHA256, preprocessing=OFFICIAL_ALIGNMENT_PROTOCOL)
     if resume_path.exists():
         resume = json.loads(resume_path.read_text(encoding="utf-8"))
         start = validate_resume(resume, binding, features_path, len(names))
@@ -243,8 +347,8 @@ def evaluate_lfw(stage, device="cuda:0", batch_size=8, progress=None):
                     progress("inference", {"completed": end, "total": len(names), "resumed_at": start, "elapsed_seconds": time.monotonic() - started})
         normalized = checked_embedding_sum(features[:, 0], features[:, 1])
         index = {name: number for number, name in enumerate(names)}
-        left = np.asarray([index[pair[0]] for pair in pairs])
-        right = np.asarray([index[pair[1]] for pair in pairs])
+        left = np.arange(0, 12000, 2) if official else np.asarray([index[pair[0]] for pair in pairs])
+        right = np.arange(1, 12000, 2) if official else np.asarray([index[pair[1]] for pair in pairs])
         distances = np.sum((normalized[left] - normalized[right]) ** 2, axis=1)
         labels = np.asarray([pair[2] for pair in pairs])
         result = lfw_ten_fold(distances, labels, input_kind="squared_l2")
@@ -253,6 +357,7 @@ def evaluate_lfw(stage, device="cuda:0", batch_size=8, progress=None):
         features.flush()
         features._mmap.close()
         del model
-    result.update({"benchmark": "LFW", "completed_at": now(), "binding": binding, "alignment_protocol": ALIGNMENT_PROTOCOL, "author_reported_accuracy": 0.9987, "difference_percentage_points": 100 * (result["accuracy"] - 0.9987), "author_input_equivalence": False, "interpretation": "원본 LFW에 고정 YuNet 정렬을 적용한 독립 재측정. 저자 aligned/bin과 동일 입력 재현 또는 IJB-C 재현이 아닙니다.", "features_sha256": digest_file(features_path), "model_evidence": model_evidence})
+    interpretation = "공식 MS1MV2 제공 정렬 LFW의 제한 로더·RGB 재측정. 저자 당시 입력 SHA·MXNet 디코딩 픽셀 동일성은 미확인이고 IJB-C 재현이 아닙니다." if official else "원본 LFW에 고정 YuNet 정렬을 적용한 독립 재측정. 저자 aligned/bin과 동일 입력 재현 또는 IJB-C 재현이 아닙니다."
+    result.update({"benchmark": "LFW", "completed_at": now(), "binding": binding, "alignment_protocol": protocol, "author_reported_accuracy": 0.9987, "difference_percentage_points": 100 * (result["accuracy"] - 0.9987), "author_input_equivalence": False, "interpretation": interpretation, "features_sha256": digest_file(features_path), "model_evidence": model_evidence})
     atomic_json(cache / "result.json", result)
     return result

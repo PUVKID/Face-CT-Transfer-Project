@@ -1,0 +1,111 @@
+{
+  "model": "TopoFR-R200 Glint360K",
+  "author_source_revision": "5960a33220968e6f9f74adcffb3f1a4ca31f9a0a",
+  "benchmark": "LFW",
+  "input_kind": "official-ms1mv2",
+  "evaluation_completed_at": "2026-11-03T16:01:52.991106+09:00",
+  "image_input_occurrences_including_repeats": 12000,
+  "pairs": 6000,
+  "genuine_pairs": 3000,
+  "impostor_pairs": 3000,
+  "correct_pairs": 5991,
+  "incorrect_pairs": 9,
+  "false_rejects": 9,
+  "false_accepts": 0,
+  "accuracy_percent": 99.85,
+  "fold_std_percentage_points": 0.20344259359556158,
+  "fold_std_is_confidence_interval": false,
+  "author_reported_accuracy_percent": 99.87,
+  "difference_percentage_points": -0.0200000000000089,
+  "folds": [
+    {
+      "fold": 0,
+      "accuracy": 0.995,
+      "threshold": 1.26,
+      "training_pairs": 5400,
+      "test_pairs": 600
+    },
+    {
+      "fold": 1,
+      "accuracy": 1.0,
+      "threshold": 1.5,
+      "training_pairs": 5400,
+      "test_pairs": 600
+    },
+    {
+      "fold": 2,
+      "accuracy": 1.0,
+      "threshold": 1.5,
+      "training_pairs": 5400,
+      "test_pairs": 600
+    },
+    {
+      "fold": 3,
+      "accuracy": 0.9983333333333333,
+      "threshold": 1.5,
+      "training_pairs": 5400,
+      "test_pairs": 600
+    },
+    {
+      "fold": 4,
+      "accuracy": 0.995,
+      "threshold": 1.5,
+      "training_pairs": 5400,
+      "test_pairs": 600
+    },
+    {
+      "fold": 5,
+      "accuracy": 1.0,
+      "threshold": 1.5,
+      "training_pairs": 5400,
+      "test_pairs": 600
+    },
+    {
+      "fold": 6,
+      "accuracy": 0.9966666666666667,
+      "threshold": 1.5,
+      "training_pairs": 5400,
+      "test_pairs": 600
+    },
+    {
+      "fold": 7,
+      "accuracy": 1.0,
+      "threshold": 1.5,
+      "training_pairs": 5400,
+      "test_pairs": 600
+    },
+    {
+      "fold": 8,
+      "accuracy": 1.0,
+      "threshold": 1.5,
+      "training_pairs": 5400,
+      "test_pairs": 600
+    },
+    {
+      "fold": 9,
+      "accuracy": 1.0,
+      "threshold": 1.5,
+      "training_pairs": 5400,
+      "test_pairs": 600
+    }
+  ],
+  "threshold_policy": "나머지 9fold의 squared-L2 정확도 최대; 첫 동률 임계값",
+  "independent_numerical_recalculation": "PASS",
+  "precision": "float32",
+  "device": "cuda:0",
+  "batch_size": 4,
+  "fine_tuning_applied": false,
+  "flip_feature_sum": true,
+  "l2_normalization": true,
+  "test_fold_threshold_selection": false,
+  "dropped_pairs": 0,
+  "author_input_equivalence_verified": false,
+  "ijbc_reproduction_completed": false,
+  "limitations": [
+    "영상 입력 12000회는 고유 영상 12000개 또는 인물 12000명을 뜻하지 않습니다.",
+    "저자 당시 입력 파일 전체 SHA와 MXNet/OpenCV 디코딩 픽셀 동일성은 확인하지 못했습니다.",
+    "fold 표준편차는 신뢰구간이 아닙니다.",
+    "IJB-C는 외부 배포 할당량으로 자료 미확보 상태이며 이 결과는 IJB-C 재현이 아닙니다.",
+    "현존 모든 상용·비공개 모델에 대한 절대 최고 또는 임상 검증·익명성 보장을 뜻하지 않습니다."
+  ]
+}
