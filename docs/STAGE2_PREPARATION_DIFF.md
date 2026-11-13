@@ -1,4 +1,6 @@
-# 🔎 2단계 1차 · 학습 전 준비 전체 변경
+<a id="-2단계-1차--학습-전-준비-전체-변경"></a>
+
+# 2단계 1차 · 학습 전 준비 전체 변경
 
 직전 기준은 1단계 공개 커밋 `0a209fe79ddd3c80e1afae8d2511a8cbf7522b2f`입니다. [직전 커밋 이후 공백·주석을 포함한 전체 Git 비교](https://github.com/PUVKID/Face-CT-Transfer-Project/compare/0a209fe79ddd3c80e1afae8d2511a8cbf7522b2f...main)를 연결합니다. 이후 main이 바뀌면 비교 범위도 넓어지므로 이 문서의 파일 목록과 함께 확인합니다.
 

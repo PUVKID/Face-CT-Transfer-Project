@@ -40,7 +40,7 @@ LFW 실행 중 `evaluation.status`는 `running`, 준비 완료는 `ready`, 정�
 
 | 객체/배열 | 알려진 필드 타입 |
 |---|---|
-| 루트 | schema_version=int(현재1), updated_at=string?, stale=bool, status=string(정의된 상태값) |
+| 루트 | schema_version=int(현재 1), updated_at=string?, stale=bool, status=string(정의된 상태값) |
 | project/current_task/legacy | 선언한 이름·차수·단계·제목·상태·설명 필드는 string |
 | progress | completed/total=개수?, unit=string, percent/eta_seconds=유한 숫자?, eta_is_estimate=bool |
 | model | name/training_data/source_url/version/license_status=string, checkpoint_verified=bool, 선택 verification_detail=string |
