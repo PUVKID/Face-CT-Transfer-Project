@@ -36,24 +36,198 @@ TopoFR-R200 Glint360K를 공식 MS1MV2 제공 정렬 LFW의 6,000쌍으로 평�
 
 추가·수정 경로는 아래와 같고 삭제는 없습니다. 소스 내용 전체·주석·공백·개행은 기준 원문과 대조한 비공개 전체 diff에 보존하며 원격 전체 비교에서도 확인할 수 있습니다. API·디자인 문서의 작업자·개인 승인 참조 표현은 공개용 기술 설명으로 정제했고 프런트 설치 캐시 경로는 같은 프로젝트 내부 상대 경로로 옮겼습니다. 원본은 수정하지 않았고 변환 전후 해시·전체 diff를 별도로 보존합니다.
 
-| 파일 | 변경 |
-|---|---|
-| `1단계/2차/README.md` | 수정 |
-| `1단계/2차/benchmark/evaluation.py` | 수정 |
-| `1단계/2차/benchmark/lfw_primitive.py` | 추가 |
-| `1단계/2차/docs/공식_LFW_획득.md` | 수정 |
-| `1단계/2차/docs/상태_API.md` | 수정 |
-| `1단계/2차/docs/획득과_실행.md` | 수정 |
-| `1단계/2차/reports/TopoFR_LFW_실제_평가_결과.md` | 추가 |
-| `1단계/2차/reports/lfw_official_result.json` | 추가 |
-| `1단계/2차/reports/모델_선정과_현재_진행.md` | 수정 |
-| `1단계/2차/tests/test_official_lfw_primitive.py` | 추가 |
-| `1단계/2차/tools/run_lfw.py` | 수정 |
-| `CHANGELOG.md` | 수정 |
-| `README.md` | 수정 |
-| `docs/ALIGNED_LFW_SOURCE_STATUS.md` | 수정 |
-| `docs/REVISION_INDEX.md` | 수정 |
-| `docs/STAGE1_REVISION2_DIFF.md` | 수정 |
+<a id="layout18-table-1-row-1"></a>
+
+**`1단계/2차/README.md`**
+
+**파일**
+
+`1단계/2차/README.md`
+
+**변경**
+
+수정
+
+<a id="layout18-table-1-row-2"></a>
+
+**`1단계/2차/benchmark/evaluation.py`**
+
+**파일**
+
+`1단계/2차/benchmark/evaluation.py`
+
+**변경**
+
+수정
+
+<a id="layout18-table-1-row-3"></a>
+
+**`1단계/2차/benchmark/lfw_primitive.py`**
+
+**파일**
+
+`1단계/2차/benchmark/lfw_primitive.py`
+
+**변경**
+
+추가
+
+<a id="layout18-table-1-row-4"></a>
+
+**`1단계/2차/docs/공식_LFW_획득.md`**
+
+**파일**
+
+`1단계/2차/docs/공식_LFW_획득.md`
+
+**변경**
+
+수정
+
+<a id="layout18-table-1-row-5"></a>
+
+**`1단계/2차/docs/상태_API.md`**
+
+**파일**
+
+`1단계/2차/docs/상태_API.md`
+
+**변경**
+
+수정
+
+<a id="layout18-table-1-row-6"></a>
+
+**`1단계/2차/docs/획득과_실행.md`**
+
+**파일**
+
+`1단계/2차/docs/획득과_실행.md`
+
+**변경**
+
+수정
+
+<a id="layout18-table-1-row-7"></a>
+
+**`1단계/2차/reports/TopoFR_LFW_실제_평가_결과.md`**
+
+**파일**
+
+`1단계/2차/reports/TopoFR_LFW_실제_평가_결과.md`
+
+**변경**
+
+추가
+
+<a id="layout18-table-1-row-8"></a>
+
+**`1단계/2차/reports/lfw_official_result.json`**
+
+**파일**
+
+`1단계/2차/reports/lfw_official_result.json`
+
+**변경**
+
+추가
+
+<a id="layout18-table-1-row-9"></a>
+
+**`1단계/2차/reports/모델_선정과_현재_진행.md`**
+
+**파일**
+
+`1단계/2차/reports/모델_선정과_현재_진행.md`
+
+**변경**
+
+수정
+
+<a id="layout18-table-1-row-10"></a>
+
+**`1단계/2차/tests/test_official_lfw_primitive.py`**
+
+**파일**
+
+`1단계/2차/tests/test_official_lfw_primitive.py`
+
+**변경**
+
+추가
+
+<a id="layout18-table-1-row-11"></a>
+
+**`1단계/2차/tools/run_lfw.py`**
+
+**파일**
+
+`1단계/2차/tools/run_lfw.py`
+
+**변경**
+
+수정
+
+<a id="layout18-table-1-row-12"></a>
+
+**`CHANGELOG.md`**
+
+**파일**
+
+`CHANGELOG.md`
+
+**변경**
+
+수정
+
+<a id="layout18-table-1-row-13"></a>
+
+**`README.md`**
+
+**파일**
+
+`README.md`
+
+**변경**
+
+수정
+
+<a id="layout18-table-1-row-14"></a>
+
+**`docs/ALIGNED_LFW_SOURCE_STATUS.md`**
+
+**파일**
+
+`docs/ALIGNED_LFW_SOURCE_STATUS.md`
+
+**변경**
+
+수정
+
+<a id="layout18-table-1-row-15"></a>
+
+**`docs/REVISION_INDEX.md`**
+
+**파일**
+
+`docs/REVISION_INDEX.md`
+
+**변경**
+
+수정
+
+<a id="layout18-table-1-row-16"></a>
+
+**`docs/STAGE1_REVISION2_DIFF.md`**
+
+**파일**
+
+`docs/STAGE1_REVISION2_DIFF.md`
+
+**변경**
+
+수정
+
 
 ## 바이너리와 제외 범위
 

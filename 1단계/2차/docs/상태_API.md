@@ -8,25 +8,210 @@
 
 응답은 JSON, `schema_version=1`이며 다음 키를 유지한다. 알려지지 않은 실제 측정값은 `null`이고 빈 시계열은 `[]`다. 아래는 필드의 의미이며 예시 성능을 실제값으로 생성하지 않는다.
 
-| 키 | 형식과 의미 |
-|---|---|
-| `updated_at` | 실제 원자 상태 저장의 한국 시각 ISO 문자열 또는 null |
-| `stale`, `status` | bool, `waiting/downloading/verifying/ready/running/complete/paused/failed` |
-| `project` | `{name, revision, stage}` 문자열 |
-| `current_task` | `{title, phase, detail}` 한국어 문자열 |
-| `progress` | `{completed,total,unit,percent,eta_seconds,eta_is_estimate}`. 미확보/미측정은 null. ETA는 추정 여부 필수 |
-| `model` | `{name,training_data,source_url,version,checkpoint_verified,license_status,reported_metrics,measured_metrics}`. metric 배열 원소 `{benchmark,metric,value,unit,provenance}` |
-| `downloads` | 파일별 `{id,name,status,received_bytes,total_bytes,verified,expected_digest,digest_algorithm,bytes_per_second,eta_seconds,error}`. 상태 `pending/downloading/verifying/complete/failed` |
-| `steps` | `{id,title,status,detail}` 배열. 상태 `waiting/active/complete/paused/failed` |
-| `techniques` | `{id,name,status,detail}` 배열. 상태 `planned/active/unused/complete/paused/failed` |
-| `evaluation` | `{status,benchmark,precision,images_completed,images_total,pairs_completed,pairs_total,fold_completed,fold_total,epoch,metrics}`. 얼굴 재현 전 metrics는 null |
-| `resources` | `{gpu,disk_free_bytes}`. gpu는 null 또는 `{name,utilization_percent,memory_used_bytes,memory_total_bytes,measured_at}` |
-| `processes` | `{role,pid,alive,started_at}` 배열. `alive`는 실제 OS 조회 또는 미확인 null |
-| `series` | `{throughput,gpu_utilization,metrics}`. 실제 관측만 `{time,value}` 배열로 누적하며 합성값을 만들지 않음 |
-| `legacy` | `{model,status,detail}`. 기존 AdaFace는 `user_stopped`이며 재개 API 없음 |
-| `external_data` | `{name,status,received_bytes,verified_bytes,total_bytes,updated_at}` 배열. 기존 LUNA 수집을 읽기 전용으로 별도 표시 |
-| `log_sources` | `{id,label}` 배열. `acquisition/evaluation/server`만 허용 |
-| `notices` | 실제 한계·대기 이유의 한국어 문자열 배열 |
+<a id="layout18-table-1-row-1"></a>
+
+**`updated_at`**
+
+**키**
+
+`updated_at`
+
+**형식과 의미**
+
+실제 원자 상태 저장의 한국 시각 ISO 문자열 또는 null
+
+<a id="layout18-table-1-row-2"></a>
+
+**`stale`, `status`**
+
+**키**
+
+`stale`, `status`
+
+**형식과 의미**
+
+bool, `waiting/downloading/verifying/ready/running/complete/paused/failed`
+
+<a id="layout18-table-1-row-3"></a>
+
+**`project`**
+
+**키**
+
+`project`
+
+**형식과 의미**
+
+`{name, revision, stage}` 문자열
+
+<a id="layout18-table-1-row-4"></a>
+
+**`current_task`**
+
+**키**
+
+`current_task`
+
+**형식과 의미**
+
+`{title, phase, detail}` 한국어 문자열
+
+<a id="layout18-table-1-row-5"></a>
+
+**`progress`**
+
+**키**
+
+`progress`
+
+**형식과 의미**
+
+`{completed,total,unit,percent,eta_seconds,eta_is_estimate}`. 미확보/미측정은 null. ETA는 추정 여부 필수
+
+<a id="layout18-table-1-row-6"></a>
+
+**`model`**
+
+**키**
+
+`model`
+
+**형식과 의미**
+
+`{name,training_data,source_url,version,checkpoint_verified,license_status,reported_metrics,measured_metrics}`. metric 배열 원소 `{benchmark,metric,value,unit,provenance}`
+
+<a id="layout18-table-1-row-7"></a>
+
+**`downloads`**
+
+**키**
+
+`downloads`
+
+**형식과 의미**
+
+파일별 `{id,name,status,received_bytes,total_bytes,verified,expected_digest,digest_algorithm,bytes_per_second,eta_seconds,error}`. 상태 `pending/downloading/verifying/complete/failed`
+
+<a id="layout18-table-1-row-8"></a>
+
+**`steps`**
+
+**키**
+
+`steps`
+
+**형식과 의미**
+
+`{id,title,status,detail}` 배열. 상태 `waiting/active/complete/paused/failed`
+
+<a id="layout18-table-1-row-9"></a>
+
+**`techniques`**
+
+**키**
+
+`techniques`
+
+**형식과 의미**
+
+`{id,name,status,detail}` 배열. 상태 `planned/active/unused/complete/paused/failed`
+
+<a id="layout18-table-1-row-10"></a>
+
+**`evaluation`**
+
+**키**
+
+`evaluation`
+
+**형식과 의미**
+
+`{status,benchmark,precision,images_completed,images_total,pairs_completed,pairs_total,fold_completed,fold_total,epoch,metrics}`. 얼굴 재현 전 metrics는 null
+
+<a id="layout18-table-1-row-11"></a>
+
+**`resources`**
+
+**키**
+
+`resources`
+
+**형식과 의미**
+
+`{gpu,disk_free_bytes}`. gpu는 null 또는 `{name,utilization_percent,memory_used_bytes,memory_total_bytes,measured_at}`
+
+<a id="layout18-table-1-row-12"></a>
+
+**`processes`**
+
+**키**
+
+`processes`
+
+**형식과 의미**
+
+`{role,pid,alive,started_at}` 배열. `alive`는 실제 OS 조회 또는 미확인 null
+
+<a id="layout18-table-1-row-13"></a>
+
+**`series`**
+
+**키**
+
+`series`
+
+**형식과 의미**
+
+`{throughput,gpu_utilization,metrics}`. 실제 관측만 `{time,value}` 배열로 누적하며 합성값을 만들지 않음
+
+<a id="layout18-table-1-row-14"></a>
+
+**`legacy`**
+
+**키**
+
+`legacy`
+
+**형식과 의미**
+
+`{model,status,detail}`. 기존 AdaFace는 `user_stopped`이며 재개 API 없음
+
+<a id="layout18-table-1-row-15"></a>
+
+**`external_data`**
+
+**키**
+
+`external_data`
+
+**형식과 의미**
+
+`{name,status,received_bytes,verified_bytes,total_bytes,updated_at}` 배열. 기존 LUNA 수집을 읽기 전용으로 별도 표시
+
+<a id="layout18-table-1-row-16"></a>
+
+**`log_sources`**
+
+**키**
+
+`log_sources`
+
+**형식과 의미**
+
+`{id,label}` 배열. `acquisition/evaluation/server`만 허용
+
+<a id="layout18-table-1-row-17"></a>
+
+**`notices`**
+
+**키**
+
+`notices`
+
+**형식과 의미**
+
+실제 한계·대기 이유의 한국어 문자열 배열
+
 
 TopoFR 원보고 LFW99.87%, IJB-C TAR97.84%@FAR1e-4/96.71%@1e-5는 `reported_metrics`에 넣고 출처를 표시한다. 직접 얼굴 평가 전 `measured_metrics=[]`, `evaluation.metrics=null`이다. 원보고값을 진행 그래프나 직접 측정에 복사하지 않는다. 다운로드 완료는 길이·필요한 해시 검증 뒤만 `complete/verified=true`다. TopoFR은 공식 전체 해시 미제공을 명시하고 실제 전체 바이트의 SHA-256을 최초 획득 영수증에 고정한다.
 
@@ -38,24 +223,198 @@ LFW 실행 중 `evaluation.status`는 `running`, 준비 완료는 `ready`, 정�
 
 검증 스키마는 `benchmark/status.py`의 `STATUS_SCHEMA`에 선언하며 초기값 `null`이나 빈 배열에서 타입을 추론하지 않는다. 문자열에는 객체·배열·bool을 허용하지 않는다. 숫자는 bool과 구분한 유한 int/float이고, 개수·바이트는 bool이 아닌 비음수 정수다. 미측정 nullable 값은 null 그대로 두며 false와 0을 미측정으로 바꾸지 않는다. 아래에서 `?`는 null 허용이다.
 
-| 객체/배열 | 알려진 필드 타입 |
-|---|---|
-| 루트 | schema_version=int(현재 1), updated_at=string?, stale=bool, status=string(정의된 상태값) |
-| project/current_task/legacy | 선언한 이름·차수·단계·제목·상태·설명 필드는 string |
-| progress | completed/total=개수?, unit=string, percent/eta_seconds=유한 숫자?, eta_is_estimate=bool |
-| model | name/training_data/source_url/version/license_status=string, checkpoint_verified=bool, 선택 verification_detail=string |
-| reported_metrics/measured_metrics 행 | benchmark/metric/unit/provenance=string, value=유한 숫자. 미측정은 빈 배열이며 잘못된 행을 미측정 행으로 정규화하지 않음 |
-| downloads 행 | id/name/status=string, received_bytes/total_bytes=바이트?, verified=bool, expected_digest/digest_algorithm/error=string?, bytes_per_second/eta_seconds=유한 숫자? |
-| downloads 추가 검증 필드 | official_digest_verified=bool, verification_basis=string. 이전 형식에서 생략할 수 있으며 제공된 값은 검증함 |
-| steps/techniques 행 | 선언한 id·title 또는 name·status·detail은 string |
-| evaluation | status/precision=string, benchmark=string?, 영상·쌍·fold·epoch·failed_images=개수?, detection_coverage=0~1 유한 숫자? |
-| evaluation.metrics | null 또는 객체. 알려진 accuracy/std는 유한 숫자, author_input_equivalence는 bool |
-| resources | disk_free_bytes=바이트?, gpu=null 또는 객체 |
-| gpu | name/measured_at=string, utilization_percent=유한 숫자, memory_used_bytes/memory_total_bytes=바이트 |
-| processes 행 | role=string, pid=bool이 아닌 양의 Windows DWORD 정수, alive=bool?, started_at=string? |
-| series 각 배열 행 | time=string, value=유한 숫자. 배열이 비어 있어도 행 스키마는 유지 |
-| external_data 행 | name=string, status/updated_at=string?, received_bytes/verified_bytes/total_bytes=바이트? |
-| log_sources 행/notices | id/label=string인 행 배열 / string 배열 |
+<a id="layout18-table-2-row-1"></a>
+
+**루트**
+
+**객체/배열**
+
+루트
+
+**알려진 필드 타입**
+
+schema_version=int(현재 1), updated_at=string?, stale=bool, status=string(정의된 상태값)
+
+<a id="layout18-table-2-row-2"></a>
+
+**project/current_task/legacy**
+
+**객체/배열**
+
+project/current_task/legacy
+
+**알려진 필드 타입**
+
+선언한 이름·차수·단계·제목·상태·설명 필드는 string
+
+<a id="layout18-table-2-row-3"></a>
+
+**progress**
+
+**객체/배열**
+
+progress
+
+**알려진 필드 타입**
+
+completed/total=개수?, unit=string, percent/eta_seconds=유한 숫자?, eta_is_estimate=bool
+
+<a id="layout18-table-2-row-4"></a>
+
+**model**
+
+**객체/배열**
+
+model
+
+**알려진 필드 타입**
+
+name/training_data/source_url/version/license_status=string, checkpoint_verified=bool, 선택 verification_detail=string
+
+<a id="layout18-table-2-row-5"></a>
+
+**reported_metrics/measured_metrics 행**
+
+**객체/배열**
+
+reported_metrics/measured_metrics 행
+
+**알려진 필드 타입**
+
+benchmark/metric/unit/provenance=string, value=유한 숫자. 미측정은 빈 배열이며 잘못된 행을 미측정 행으로 정규화하지 않음
+
+<a id="layout18-table-2-row-6"></a>
+
+**downloads 행**
+
+**객체/배열**
+
+downloads 행
+
+**알려진 필드 타입**
+
+id/name/status=string, received_bytes/total_bytes=바이트?, verified=bool, expected_digest/digest_algorithm/error=string?, bytes_per_second/eta_seconds=유한 숫자?
+
+<a id="layout18-table-2-row-7"></a>
+
+**downloads 추가 검증 필드**
+
+**객체/배열**
+
+downloads 추가 검증 필드
+
+**알려진 필드 타입**
+
+official_digest_verified=bool, verification_basis=string. 이전 형식에서 생략할 수 있으며 제공된 값은 검증함
+
+<a id="layout18-table-2-row-8"></a>
+
+**steps/techniques 행**
+
+**객체/배열**
+
+steps/techniques 행
+
+**알려진 필드 타입**
+
+선언한 id·title 또는 name·status·detail은 string
+
+<a id="layout18-table-2-row-9"></a>
+
+**evaluation**
+
+**객체/배열**
+
+evaluation
+
+**알려진 필드 타입**
+
+status/precision=string, benchmark=string?, 영상·쌍·fold·epoch·failed_images=개수?, detection_coverage=0~1 유한 숫자?
+
+<a id="layout18-table-2-row-10"></a>
+
+**evaluation.metrics**
+
+**객체/배열**
+
+evaluation.metrics
+
+**알려진 필드 타입**
+
+null 또는 객체. 알려진 accuracy/std는 유한 숫자, author_input_equivalence는 bool
+
+<a id="layout18-table-2-row-11"></a>
+
+**resources**
+
+**객체/배열**
+
+resources
+
+**알려진 필드 타입**
+
+disk_free_bytes=바이트?, gpu=null 또는 객체
+
+<a id="layout18-table-2-row-12"></a>
+
+**gpu**
+
+**객체/배열**
+
+gpu
+
+**알려진 필드 타입**
+
+name/measured_at=string, utilization_percent=유한 숫자, memory_used_bytes/memory_total_bytes=바이트
+
+<a id="layout18-table-2-row-13"></a>
+
+**processes 행**
+
+**객체/배열**
+
+processes 행
+
+**알려진 필드 타입**
+
+role=string, pid=bool이 아닌 양의 Windows DWORD 정수, alive=bool?, started_at=string?
+
+<a id="layout18-table-2-row-14"></a>
+
+**series 각 배열 행**
+
+**객체/배열**
+
+series 각 배열 행
+
+**알려진 필드 타입**
+
+time=string, value=유한 숫자. 배열이 비어 있어도 행 스키마는 유지
+
+<a id="layout18-table-2-row-15"></a>
+
+**external_data 행**
+
+**객체/배열**
+
+external_data 행
+
+**알려진 필드 타입**
+
+name=string, status/updated_at=string?, received_bytes/verified_bytes/total_bytes=바이트?
+
+<a id="layout18-table-2-row-16"></a>
+
+**log_sources 행/notices**
+
+**객체/배열**
+
+log_sources 행/notices
+
+**알려진 필드 타입**
+
+id/label=string인 행 배열 / string 배열
+
 
 배열의 각 행은 위 필수 필드를 포함한다. downloads의 두 추가 검증 필드만 이전 형식과의 호환을 위해 선택 필드다. 알려진 nullable scalar에 객체나 배열을 넣거나 행의 문자열 필드에 객체를 넣으면 전체 상태를 failed/stale로 반환하고 직접 측정 집계는 null/빈 배열로 되돌린다. 정상 한국어 문자열·null·false·0 및 기존 검증 근거는 그대로 유지한다. updated_at=null은 아직 관측 시각이 없는 정상 대기 상태로서 stale=true이며 임의의 현재 시각을 만들지 않는다.
 
