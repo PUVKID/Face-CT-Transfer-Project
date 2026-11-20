@@ -14,249 +14,35 @@
 
 기존 1단계 하위 파일은 바이트 단위로 보존했습니다. root README·CHANGELOG·차수 목차만 새 단계에 맞춰 수정합니다. 삭제 파일과 바이너리는 없습니다. 새 Python 코드 17개, 설정 JSON 1개, README·기술 문서 5개를 2단계에 추가합니다. 원본 문서 중 내부 운영 주체 표현을 저자 기술 문맥으로 정제했으며 코드·기대값·학습 기준은 바꾸지 않았습니다. 비공개 원본과 변환 전체 차이를 별도 보존했습니다.
 
-**파일**
-
-`2단계/1차/README.md`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/configs/experiments.json`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/docs/구현_검증_기록.md`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/docs/구현_계획.md`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/docs/요구사항.md`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/docs/전처리_안전경계.md`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/src/ct_transfer/__init__.py`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/src/ct_transfer/budget.py`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/src/ct_transfer/data.py`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/src/ct_transfer/evaluation.py`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/src/ct_transfer/io.py`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/src/ct_transfer/models.py`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/src/ct_transfer/pipeline.py`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/src/ct_transfer/splits.py`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/src/ct_transfer/training.py`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/tests/test_contracts.py`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/tests/test_deadlines.py`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/tests/test_numpy_batches.py`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/tests/test_precision.py`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/tests/test_resource_progress.py`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/tests/test_runtime_contracts.py`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/tests/test_training.py`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`2단계/1차/tools/run_stage2.py`
-
-**변경**
-
-추가
-
-
-**파일**
-
-`CHANGELOG.md`
-
-**변경**
-
-수정
-
-
-**파일**
-
-`README.md`
-
-**변경**
-
-수정
-
-
-**파일**
-
-`docs/REVISION_INDEX.md`
-
-**변경**
-
-수정
-
-
-**파일**
-
-`docs/STAGE2_PREPARATION_DIFF.md`
-
-**변경**
-
-추가
-
-
+| 파일 | 변경 |
+| --- | --- |
+| `2단계/1차/README.md` | 추가 |
+| `2단계/1차/configs/experiments.json` | 추가 |
+| `2단계/1차/docs/구현_검증_기록.md` | 추가 |
+| `2단계/1차/docs/구현_계획.md` | 추가 |
+| `2단계/1차/docs/요구사항.md` | 추가 |
+| `2단계/1차/docs/전처리_안전경계.md` | 추가 |
+| `2단계/1차/src/ct_transfer/__init__.py` | 추가 |
+| `2단계/1차/src/ct_transfer/budget.py` | 추가 |
+| `2단계/1차/src/ct_transfer/data.py` | 추가 |
+| `2단계/1차/src/ct_transfer/evaluation.py` | 추가 |
+| `2단계/1차/src/ct_transfer/io.py` | 추가 |
+| `2단계/1차/src/ct_transfer/models.py` | 추가 |
+| `2단계/1차/src/ct_transfer/pipeline.py` | 추가 |
+| `2단계/1차/src/ct_transfer/splits.py` | 추가 |
+| `2단계/1차/src/ct_transfer/training.py` | 추가 |
+| `2단계/1차/tests/test_contracts.py` | 추가 |
+| `2단계/1차/tests/test_deadlines.py` | 추가 |
+| `2단계/1차/tests/test_numpy_batches.py` | 추가 |
+| `2단계/1차/tests/test_precision.py` | 추가 |
+| `2단계/1차/tests/test_resource_progress.py` | 추가 |
+| `2단계/1차/tests/test_runtime_contracts.py` | 추가 |
+| `2단계/1차/tests/test_training.py` | 추가 |
+| `2단계/1차/tools/run_stage2.py` | 추가 |
+| `CHANGELOG.md` | 수정 |
+| `README.md` | 수정 |
+| `docs/REVISION_INDEX.md` | 수정 |
+| `docs/STAGE2_PREPARATION_DIFF.md` | 추가 |
 
 ## 제외와 보류
 
