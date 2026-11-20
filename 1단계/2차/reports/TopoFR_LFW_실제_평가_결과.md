@@ -6,7 +6,7 @@
 
 ## 측정 요약
 
-| 항목 (Category) | 실제 관측 |
+| 항목 | 실제 관측 |
 | --- | --- |
 | 모델 | TopoFR-R200 Glint360K 공개 체크포인트 |
 | 자료 | 공식 InsightFace MS1MV2에 포함된 정렬 LFW |
