@@ -53,7 +53,7 @@ LFW 실행 중 `evaluation.status`는 `running`, 준비 완료는 `ready`, 정�
 
 LFW 완료 뒤 전체 상태는 IJB-C 외부 대기 때문에 `paused`일 수 있으며 LFW 직접 값과 IJB-C 미측정을 동시에 구분한다.
 
-처리 량의 단위는 현재 progress의 `bytes` 또는 `images`를 따른다.
+처리량의 단위는 현재 progress의 `bytes` 또는 `images`를 따른다.
 
 얼굴 평가에는 epoch가 null이며 학습 곡선을 만들지 않는다.
 
