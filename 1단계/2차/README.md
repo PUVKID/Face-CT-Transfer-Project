@@ -3,7 +3,16 @@
 # 1 단계 2차·얼굴 벤치마크와 실시간 상태
 
 <!-- reading-levels17:start -->
-**읽기 수준 선택** · [LEVEL 1 - Beginner](#reading-level-1) · [LEVEL 2 - Explorer](#reading-level-2) · [LEVEL 3 - Practitioner](#reading-level-3) · [LEVEL 4 - Advanced](#reading-level-4) · [LEVEL 5 - Expert](#reading-level-5)
+| 읽기 수준 | 설명의 초점 |
+| --- | --- |
+| [LEVEL 1 · Beginner](#reading-level-1) | 목적과 동작부터 |
+| [LEVEL 2 · Explorer](#reading-level-2) | 구성과 연결 원리 |
+| [LEVEL 3 · Practitioner](#reading-level-3) | 준비·실행·결과 확인 |
+| [LEVEL 4 · Advanced](#reading-level-4) | 구현·설계·실패 처리 |
+| [LEVEL 5 · Expert](#reading-level-5) | 근거·프로토콜·한계 검토 |
+
+<details open>
+<summary><strong>LEVEL 1 · Beginner</strong> — 목적과 동작부터</summary>
 
 <a id="reading-level-1"></a>
 
@@ -227,6 +236,12 @@ IJB-C는 외부 서비스 할당량 대기입니다.
 
 [표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
 
+
+</details>
+
+<details>
+<summary><strong>LEVEL 2 · Explorer</strong> — 구성과 연결 원리</summary>
+
 <a id="reading-level-2"></a>
 
 ## LEVEL 2 - Explorer
@@ -448,6 +463,12 @@ IJB-C는 외부 서비스 할당량 대기입니다.
 LUNA25 정상 클래스 부재와 IQ 환자 매핑 미확인이 남습니다. 실제 얼굴/CT·특징·개별 확률·가중치·운영 로그는 공개하지 않습니다. 합성 30 검사나 30 설정 계획을 30회 연구로 세지 않습니다.
 
 [표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
+
+
+</details>
+
+<details>
+<summary><strong>LEVEL 3 · Practitioner</strong> — 준비·실행·결과 확인</summary>
 
 <a id="reading-level-3"></a>
 
@@ -671,6 +692,12 @@ IJB-C는 외부 서비스 할당량 대기입니다.
 
 [표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
 
+
+</details>
+
+<details>
+<summary><strong>LEVEL 4 · Advanced</strong> — 구현·설계·실패 처리</summary>
+
 <a id="reading-level-4"></a>
 
 ## LEVEL 4 - Advanced
@@ -893,6 +920,12 @@ IJB-C는 외부 서비스 할당량 대기입니다.
 
 [표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
 
+
+</details>
+
+<details>
+<summary><strong>LEVEL 5 · Expert</strong> — 근거·프로토콜·한계 검토</summary>
+
 <a id="reading-level-5"></a>
 
 ## LEVEL 5 - Expert
@@ -1112,3 +1145,6 @@ IJB-C는 외부 서비스 할당량 대기입니다.
 이 자료는 코드·설정·집계 기술 진행 기록입니다. 개별 검사나 수리를 30개 연구·30회 학습으로 세지 않습니다. 논문 원고가 없으므로 논문 PDF는 적용하지 않습니다. 실제 얼굴 성능 평가와 후속 CT 연구는 미완료입니다.
 
 [정렬 전체 집계](reports/lfw_yunet_coverage.json) · [공식 파일 획득·정적 집계](reports/lfw_official_acquisition.json) · [공식 파일 획득 절차](docs/공식_LFW_획득.md)
+
+</details>
+

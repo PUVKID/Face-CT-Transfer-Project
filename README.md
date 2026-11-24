@@ -7,11 +7,11 @@
 <!-- reading-levels17:start -->
 | 읽기 수준 | 안내 내용 |
 | --- | --- |
-| [LEVEL 1 - Beginner](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A81.md) | 낯선 용어를 풀고 입력부터 결과까지 구체적인 예로 읽기 |
-| [LEVEL 2 - Explorer](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A82.md) | 핵심 개념과 처리 흐름의 관계 이해 |
-| [LEVEL 3 - Practitioner](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A83.md) | 실험·사용 절차와 결과 해석 따라가기 |
-| [LEVEL 4 - Advanced](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A84.md) | 코드 구조·설정·설계 선택과 제약 검토 |
-| [LEVEL 5 - Expert](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A85.md) | 논문·프로토콜·분모·누수·미검증 범위 대조 |
+| [**LEVEL 1 - Beginner**](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A81.md) | 낯선 용어를 풀고 입력부터 결과까지 구체적인 예로 읽기 |
+| [**LEVEL 2 - Explorer**](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A82.md) | 핵심 개념과 처리 흐름의 관계 이해 |
+| [**LEVEL 3 - Practitioner**](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A83.md) | 실험·사용 절차와 결과 해석 따라가기 |
+| [**LEVEL 4 - Advanced**](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A84.md) | 코드 구조·설정·설계 선택과 제약 검토 |
+| [**LEVEL 5 - Expert**](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A85.md) | 논문·프로토콜·분모·누수·미검증 범위 대조 |
 <!-- reading-levels17:end -->
 
 [실제 평가 상세](1단계/2차/reports/TopoFR_LFW_실제_평가_결과.md) · [기계 판독 집계](1단계/2차/reports/lfw_official_result.json) · [모델 선정과 시점별 기록](1단계/2차/reports/모델_선정과_현재_진행.md)
@@ -94,11 +94,11 @@ LFW 자료와 평가 쌍의 수신·제공된 해시 대조는 완료했습니�
 
 ## 실제 단계와 차수
 
-| 차수 | 자료 폴더 | 설명 | 직전 비교 |
-| --- | --- | --- | --- |
-| 1 단계 1차 | [자료](1단계/1차) | [합성 진단 총괄](1단계/1차/reports/총괄_보고서.md) | [최초 비교](docs/INITIAL_DIFF.md) |
-| 2 단계 1차 | [자료](2단계/1차) | [이전 CT 준비와 실행 기록](2단계/1차/README.md) | [당시 전체 비교](docs/STAGE2_PREPARATION_DIFF.md) |
-| 1 단계 2차 | [자료](1단계/2차) | [새 얼굴 모델·LFW 실측·실시간 대시보드](1단계/2차/README.md) | [직전 공개 기준 이후 전체 비교](docs/STAGE1_REVISION2_DIFF.md) |
+| 차수 | 자료 폴더 | 설명 · 직전 비교 |
+| --- | --- | --- |
+| 1 단계 1차 | [자료](1단계/1차) | [합성 진단 총괄](1단계/1차/reports/총괄_보고서.md)<br>[최초 비교](docs/INITIAL_DIFF.md) |
+| 2 단계 1차 | [자료](2단계/1차) | [이전 CT 준비와 실행 기록](2단계/1차/README.md)<br>[당시 전체 비교](docs/STAGE2_PREPARATION_DIFF.md) |
+| 1 단계 2차 | [자료](1단계/2차) | [새 얼굴 모델·LFW 실측·실시간 대시보드](1단계/2차/README.md)<br>[직전 공개 기준 이후 전체 비교](docs/STAGE1_REVISION2_DIFF.md) |
 
 기존 AdaFace CT 실행은 사용자 요청으로 중단했고 원본·체크포인트·부분 결과를 보존합니다. 과거 문서의 실행 중 표시는 당시 시점 기록이며 현재 재개 지시가 아닙니다.
 

@@ -4,7 +4,16 @@
 # 2 단계·실제 CT 전이 분류 1차
 
 <!-- reading-levels17:start -->
-**읽기 수준 선택** · [LEVEL 1 - Beginner](#reading-level-1) · [LEVEL 2 - Explorer](#reading-level-2) · [LEVEL 3 - Practitioner](#reading-level-3) · [LEVEL 4 - Advanced](#reading-level-4) · [LEVEL 5 - Expert](#reading-level-5)
+| 읽기 수준 | 설명의 초점 |
+| --- | --- |
+| [LEVEL 1 · Beginner](#reading-level-1) | 목적과 동작부터 |
+| [LEVEL 2 · Explorer](#reading-level-2) | 구성과 연결 원리 |
+| [LEVEL 3 · Practitioner](#reading-level-3) | 준비·실행·결과 확인 |
+| [LEVEL 4 · Advanced](#reading-level-4) | 구현·설계·실패 처리 |
+| [LEVEL 5 · Expert](#reading-level-5) | 근거·프로토콜·한계 검토 |
+
+<details open>
+<summary><strong>LEVEL 1 · Beginner</strong> — 목적과 동작부터</summary>
 
 <a id="reading-level-1"></a>
 
@@ -120,6 +129,12 @@ LUNA25에는 정상 클래스가 없고 IQ 환자 매핑은 미확인입니다. 
 
 [표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
 
+
+</details>
+
+<details>
+<summary><strong>LEVEL 2 · Explorer</strong> — 구성과 연결 원리</summary>
+
 <a id="reading-level-2"></a>
 
 ## LEVEL 2 - Explorer
@@ -233,6 +248,12 @@ LUNA25에는 정상 클래스가 없고 IQ 환자 매핑은 미확인입니다. 
 LUNA25 정상 클래스 부재와 IQ 환자 매핑 미확인이 남습니다. 실제 얼굴/CT·특징·개별 확률·가중치·운영 로그는 공개하지 않습니다. 합성 30 검사나 30 설정 계획을 30회 연구로 세지 않습니다.
 
 [표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
+
+
+</details>
+
+<details>
+<summary><strong>LEVEL 3 · Practitioner</strong> — 준비·실행·결과 확인</summary>
 
 <a id="reading-level-3"></a>
 
@@ -348,6 +369,12 @@ LUNA25에는 정상 클래스가 없고 IQ 환자 매핑은 미확인입니다. 
 
 [표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
 
+
+</details>
+
+<details>
+<summary><strong>LEVEL 4 · Advanced</strong> — 구현·설계·실패 처리</summary>
+
 <a id="reading-level-4"></a>
 
 ## LEVEL 4 - Advanced
@@ -462,6 +489,12 @@ LUNA25에는 정상 클래스가 없고 IQ 환자 매핑은 미확인입니다. 
 
 [표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
 
+
+</details>
+
+<details>
+<summary><strong>LEVEL 5 · Expert</strong> — 근거·프로토콜·한계 검토</summary>
+
 <a id="reading-level-5"></a>
 
 ## LEVEL 5 - Expert
@@ -536,3 +569,6 @@ LUNA25 신뢰구간은 환자 단위 cluster bootstrap으로 계산합니다. IQ
 07:12 확인 시점에는 특징 계산 중이었고 LUNA25 이진 평가의 완료 외부 fold는 0개, IQ 완료 설정은 0/30이었습니다. 이는 재시작 상태 관측이며 임상 분류 결과가 아닙니다.
 
 이번 묶음은 코드·자료 준비·자원 실 측의 공개이며 30 설정 결과 보고서나 결과 공개 커밋 횟수에 포함하지 않습니다. 이후 실제 학습 결과는 별도 검증해 공개합니다.
+
+</details>
+

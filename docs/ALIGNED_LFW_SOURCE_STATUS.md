@@ -3,7 +3,18 @@
 # 공식 정렬 LFW 출처와 확보 범위
 
 <!-- reading-levels17:start -->
-**읽기 수준 선택** · [LEVEL 1 - Beginner](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A81.md) · [LEVEL 2 - Explorer](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A82.md) · [LEVEL 3 - Practitioner](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A83.md) · [LEVEL 4 - Advanced](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A84.md) · [LEVEL 5 - Expert](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A85.md)
+<details>
+<summary><strong>읽기 수준 선택</strong></summary>
+
+| 레벨 | 읽는 목적 |
+| --- | --- |
+| [LEVEL 1 - Beginner](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A81.md) | 목적과 입력·출력을 쉬운 말로 이해하기 |
+| [LEVEL 2 - Explorer](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A82.md) | 주요 기능과 전체 처리 흐름 살펴보기 |
+| [LEVEL 3 - Practitioner](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A83.md) | 설정·실행 순서와 결과 확인하기 |
+| [LEVEL 4 - Advanced](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A84.md) | 구현 선택과 조건·한계 비교하기 |
+| [LEVEL 5 - Expert](%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A85.md) | 세부 근거와 재현 조건 검토하기 |
+
+</details>
 <!-- reading-levels17:end -->
 
 > **최신 실측:** LFW6,000 쌍·10fold 정확도 99.85%, 저자 보고 99.87% 대비 −0.02%p. 독립 재계산 일치. IJB-C는 미측정이며 입력 동일성의 한계가 남아 있습니다.
@@ -112,6 +123,9 @@ IJB-C는 외부 서비스 할당량 대기입니다.
 
 해당 상단 스크린 샷은 하단 레이블의 시각 증거와 구분합니다.
 
-이 자료는 코드·설정·집계 기술 진행 기록입니다. 개별 검사나 수리를 30개 연구·30회 학습으로 세지 않습니다. 논문 원고가 없으므로 논문 PDF는 적용하지 않습니다. 실제 얼굴 성능 평가와 후속 CT 연구는 미완료입니다.
+이 자료는 코드·설정·집계 기술 진행 기록입니다.  
+개별 검사나 수리를 30개 연구·30회 학습으로 세지 않습니다.  
+논문 원고가 없으므로 논문 PDF는 적용하지 않습니다.  
+실제 얼굴 성능 평가와 후속 CT 연구는 미완료입니다.
 
 [정렬 집계](../1단계/2차/reports/lfw_yunet_coverage.json) · [획득·정적 집계](../1단계/2차/reports/lfw_official_acquisition.json)
