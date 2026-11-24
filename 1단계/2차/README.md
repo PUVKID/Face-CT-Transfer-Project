@@ -5,11 +5,11 @@
 <!-- reading-levels17:start -->
 | 읽기 수준 | 설명의 초점 |
 | --- | --- |
-| [LEVEL 1 · Beginner](#reading-level-1) | 목적과 동작부터 |
-| [LEVEL 2 · Explorer](#reading-level-2) | 구성과 연결 원리 |
-| [LEVEL 3 · Practitioner](#reading-level-3) | 준비·실행·결과 확인 |
-| [LEVEL 4 · Advanced](#reading-level-4) | 구현·설계·실패 처리 |
-| [LEVEL 5 · Expert](#reading-level-5) | 근거·프로토콜·한계 검토 |
+| [LEVEL 1 · Beginner](#user-content-reading-level-1) | 목적과 동작부터 |
+| [LEVEL 2 · Explorer](#user-content-reading-level-2) | 구성과 연결 원리 |
+| [LEVEL 3 · Practitioner](#user-content-reading-level-3) | 준비·실행·결과 확인 |
+| [LEVEL 4 · Advanced](#user-content-reading-level-4) | 구현·설계·실패 처리 |
+| [LEVEL 5 · Expert](#user-content-reading-level-5) | 근거·프로토콜·한계 검토 |
 
 <details open>
 <summary>LEVEL 1 · Beginner — 목적과 동작부터</summary>
@@ -234,7 +234,7 @@ IJB-C는 외부 서비스 할당량 대기입니다.
 
 기존 AdaFace CT 실행은 사용자가 중단했고 자료를 보존했습니다. IJB-C는 아직 측정하지 않았습니다. 얼굴에서 높은 정확도가 나와도 CT 임상 성능이 확인된 것은 아닙니다.
 
-[표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
+[표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#user-content-reading-level-5)
 
 
 </details>
@@ -462,7 +462,7 @@ IJB-C는 외부 서비스 할당량 대기입니다.
 
 LUNA25 정상 클래스 부재와 IQ 환자 매핑 미확인이 남습니다. 실제 얼굴/CT·특징·개별 확률·가중치·운영 로그는 공개하지 않습니다. 합성 30 검사나 30 설정 계획을 30회 연구로 세지 않습니다.
 
-[표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
+[표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#user-content-reading-level-5)
 
 
 </details>
@@ -690,7 +690,7 @@ IJB-C는 외부 서비스 할당량 대기입니다.
 
 초기 상태 복원·한글 ONNX 경로·WinError5·75초 시간 초과 실패는 이후 통과와 별도로 남습니다. 원인이 미확정인 항목을 해결 원인까지 확정했다고 적지 않습니다. 외부 할당량을 우회해 확보했다고 하지 않습니다.
 
-[표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
+[표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#user-content-reading-level-5)
 
 
 </details>
@@ -918,7 +918,7 @@ IJB-C는 외부 서비스 할당량 대기입니다.
 
 환자 분할·라벨 계보·내부 선택편향·계산 량·입력 동일성이 해석의 제약입니다. LUNA25 영상 CC BY4.0과 주석 CC BY-NC4.0을 보존하며 임의의 재배포 허가를 붙이지 않습니다.
 
-[표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#reading-level-5)
+[표·코드·실행 설정·파일 전체 비교를 포함한 공통 상세](#user-content-reading-level-5)
 
 
 </details>
