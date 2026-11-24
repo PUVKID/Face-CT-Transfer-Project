@@ -7,11 +7,11 @@
 <!-- reading-levels17:start -->
 | 읽기 수준 | 안내 내용 |
 | --- | --- |
-| [**LEVEL 1 - Beginner**](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A81.md) | 낯선 용어를 풀고 입력부터 결과까지 구체적인 예로 읽기 |
-| [**LEVEL 2 - Explorer**](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A82.md) | 핵심 개념과 처리 흐름의 관계 이해 |
-| [**LEVEL 3 - Practitioner**](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A83.md) | 실험·사용 절차와 결과 해석 따라가기 |
-| [**LEVEL 4 - Advanced**](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A84.md) | 코드 구조·설정·설계 선택과 제약 검토 |
-| [**LEVEL 5 - Expert**](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A85.md) | 논문·프로토콜·분모·누수·미검증 범위 대조 |
+| [LEVEL 1 - Beginner](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A81.md) | 낯선 용어를 풀고 입력부터 결과까지 구체적인 예로 읽기 |
+| [LEVEL 2 - Explorer](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A82.md) | 핵심 개념과 처리 흐름의 관계 이해 |
+| [LEVEL 3 - Practitioner](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A83.md) | 실험·사용 절차와 결과 해석 따라가기 |
+| [LEVEL 4 - Advanced](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A84.md) | 코드 구조·설정·설계 선택과 제약 검토 |
+| [LEVEL 5 - Expert](docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A85.md) | 논문·프로토콜·분모·누수·미검증 범위 대조 |
 <!-- reading-levels17:end -->
 
 [실제 평가 상세](1단계/2차/reports/TopoFR_LFW_실제_평가_결과.md) · [기계 판독 집계](1단계/2차/reports/lfw_official_result.json) · [모델 선정과 시점별 기록](1단계/2차/reports/모델_선정과_현재_진행.md)
@@ -29,7 +29,7 @@
 
 TopoFR-R200 Glint360K를 공식 MS1MV2 제공 정렬 LFW의 6,000 쌍으로 평가해 10fold 평균 정확도 **99.85%**를 얻었습니다.
 
-**정답 5,991·오답 9(동일인 오거부 9·타인 오수락 0), fold 표준편차 0.203443%p(ddof=0)입니다.** 표준 편차는 신뢰구간이 아닙니다. 저자 보고 99.87%와 차이는 −0.02%p입니다.
+정답 5,991·오답 9(동일인 오거부 9·타인 오수락 0), fold 표준편차 0.203443%p(ddof=0)입니다. 표준 편차는 신뢰구간이 아닙니다. 저자 보고 99.87%와 차이는 −0.02%p입니다.
 
 영상 입력 12,000회는 중복을 포함하며 고유 영상·인물 12,000개를 뜻하지 않습니다.
 
@@ -39,7 +39,7 @@ TopoFR-R200 Glint360K를 공식 MS1MV2 제공 정렬 LFW의 6,000 쌍으로 평�
 
 저자 당시 bin의 전체 SHA와 MXNet/OpenCV 디코딩의 픽셀 동일성은 미확인입니다. 따라서 완전히 같은 입력 재현·통계적 동등성·세계 절대 최고를 주장하지 않습니다.
 
-주 비교 지표인 **IJB-C TAR97.84%@FAR=1e-4는 계속 저자 보고**이며 IJB-C는 외부 할당 량 대기입니다. LFW 실측으로 IJB-C·의료/임상·전체 단계 완료를 대체하지 않습니다.
+주 비교 지표인 IJB-C TAR97.84%@FAR=1e-4는 계속 저자 보고이며 IJB-C는 외부 할당 량 대기입니다. LFW 실측으로 IJB-C·의료/임상·전체 단계 완료를 대체하지 않습니다.
 
 같은 1 단계 2차의 후속 수정으로 제한 primitive 로더·공식 입력 캐시·평가 실행과 관련 검사·문서를 반영했습니다.
 
@@ -66,7 +66,7 @@ TopoFR-R200 Glint360K를 공식 MS1MV2 제공 정렬 LFW의 6,000 쌍으로 평�
 <a name="-현재-진행과-측정-범위"></a>
 ## 준비 당시 모델과 측정 범위
 
-**준비 당시에는 1 단계 2차의 TopoFR-R200 Glint360K에 대한 실제 LFW·IJB-C 성능이 미측정이었습니다.** 이후 LFW는 위와 같이 측정했으며 IJB-C는 여전히 미측정입니다.
+준비 당시에는 1 단계 2차의 TopoFR-R200 Glint360K에 대한 실제 LFW·IJB-C 성능이 **미측정**이었습니다. 이후 LFW는 위와 같이 측정했으며 IJB-C는 여전히 미측정입니다.
 
 저자 보고 IJB-C TAR은 FAR =1e-4에서 97.84%, FAR =1e-5에서 96.71%이며 LFW 정확도는 99.87%입니다.
 

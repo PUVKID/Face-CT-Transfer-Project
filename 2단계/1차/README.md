@@ -13,7 +13,7 @@
 | [LEVEL 5 · Expert](#reading-level-5) | 근거·프로토콜·한계 검토 |
 
 <details open>
-<summary><strong>LEVEL 1 · Beginner</strong> — 목적과 동작부터</summary>
+<summary>LEVEL 1 · Beginner — 목적과 동작부터</summary>
 
 <a id="reading-level-1"></a>
 
@@ -47,7 +47,7 @@ LUNA25에는 정상 클래스가 없습니다. IQ 정상과 LUNA25 결절 ROI를
 
 Mendeley ZIP 전체와 환자 매핑은 검증하지 않았으며 설명의 1,190 영상·110명을 이 보유 자료의 확정 값으로 사용하지 않습니다.
 
-얼굴을 구별하도록 학습한 모델을 먼저 확인하고, 그 특징을 CT 분류에 옮겨 쓸 수 있는지 단계별로 살피는 연구입니다. 얼굴 시험과 CT 연구는 별개입니다. **현재 LFW 얼굴 시험은 측정됐고 IJB-C와 후속 CT 연구는 미완료**입니다.
+얼굴을 구별하도록 학습한 모델을 먼저 확인하고, 그 특징을 CT 분류에 옮겨 쓸 수 있는지 단계별로 살피는 연구입니다. 얼굴 시험과 CT 연구는 별개입니다. 현재 LFW 얼굴 시험은 측정됐고 IJB-C와 후속 CT 연구는 미완료입니다.
 
 ### LEVEL 1 · 달라진 내용과 차수 관계
 
@@ -133,7 +133,7 @@ LUNA25에는 정상 클래스가 없고 IQ 환자 매핑은 미확인입니다. 
 </details>
 
 <details>
-<summary><strong>LEVEL 2 · Explorer</strong> — 구성과 연결 원리</summary>
+<summary>LEVEL 2 · Explorer — 구성과 연결 원리</summary>
 
 <a id="reading-level-2"></a>
 
@@ -253,7 +253,7 @@ LUNA25 정상 클래스 부재와 IQ 환자 매핑 미확인이 남습니다. �
 </details>
 
 <details>
-<summary><strong>LEVEL 3 · Practitioner</strong> — 준비·실행·결과 확인</summary>
+<summary>LEVEL 3 · Practitioner — 준비·실행·결과 확인</summary>
 
 <a id="reading-level-3"></a>
 
@@ -373,7 +373,7 @@ LUNA25에는 정상 클래스가 없고 IQ 환자 매핑은 미확인입니다. 
 </details>
 
 <details>
-<summary><strong>LEVEL 4 · Advanced</strong> — 구현·설계·실패 처리</summary>
+<summary>LEVEL 4 · Advanced — 구현·설계·실패 처리</summary>
 
 <a id="reading-level-4"></a>
 
@@ -493,7 +493,7 @@ LUNA25에는 정상 클래스가 없고 IQ 환자 매핑은 미확인입니다. 
 </details>
 
 <details>
-<summary><strong>LEVEL 5 · Expert</strong> — 근거·프로토콜·한계 검토</summary>
+<summary>LEVEL 5 · Expert — 근거·프로토콜·한계 검토</summary>
 
 <a id="reading-level-5"></a>
 
@@ -504,7 +504,7 @@ LUNA25에는 정상 클래스가 없고 IQ 환자 매핑은 미확인입니다. 
 **기존 전체 상세** — 다음 본문은 이 차수의 원래 방법·조건·결과·실패·한계와 전체 비교입니다. 위 수준의 설명에 필요한 공통 근거도 모두 여기서 확인할 수 있습니다.
 <!-- reading-levels17:end -->
 
-**원래 얼굴 사전학습 모델의 LUNA25 이진 환자별 평가와, 별도 LUNA25 보조 학습 뒤 IQ 정상·양성·악성 탐색을 구현합니다.** 현재 파일은 실행 소스이며 임상 성능 보고가 아닙니다.
+원래 얼굴 사전학습 모델의 LUNA25 이진 환자별 평가와, 별도 LUNA25 보조 학습 뒤 IQ 정상·양성·악성 탐색을 구현합니다. 현재 파일은 실행 소스이며 임상 성능 보고가 아닙니다.
 
 | 분석 | 자료 | 분할 | 해석 |
 | --- | --- | --- | --- |

@@ -2,7 +2,7 @@
 
 <!-- reading-levels17:start -->
 <details>
-<summary><strong>읽기 수준 선택</strong></summary>
+<summary>읽기 수준 선택</summary>
 
 | 레벨 | 읽는 목적 |
 | --- | --- |
@@ -38,7 +38,7 @@ TopoFR와 InsightFace의 공식 연결에서 확인한 MS1MV2 ZIP의 `faces_emor
 
 실행 명령의 실제 절대 경로와 운영 문맥은 비공개 인계에 기록한다.
 
-**정확한 206/Content-Range/Content-Length/본문 길이·HTTPS/host·무redirect·바이트/요청 상한을 적용하고 403/quota/HTML/200은 우회나 재시도 없이 중단한다.** 개별 socket timeout5초와 읽기 전후의 180초 soft deadline을 유지한다.
+정확한 206/Content-Range/Content-Length/본문 길이·HTTPS/host·무redirect·바이트/요청 상한을 적용하고 403/quota/HTML/200은 우회나 재시도 없이 중단한다. 개별 socket timeout5초와 읽기 전후의 180초 soft deadline을 유지한다.
 
 같은 response의 blocking read나 파일 IO를 soft deadline만으로 강제 중단한다고 주장하지 않는다.
 
