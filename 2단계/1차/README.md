@@ -1,6 +1,7 @@
+<a id="2-단계실제-ct-전-이-분류-1차"></a>
 <a id="-2단계--실제-ct-전이-분류-1차"></a>
 
-# 2 단계·실제 CT 전 이 분류 1차
+# 2 단계·실제 CT 전이 분류 1차
 
 <!-- reading-levels17:start -->
 **읽기 수준 선택** · [LEVEL 1 - Beginner](#reading-level-1) · [LEVEL 2 - Explorer](#reading-level-2) · [LEVEL 3 - Practitioner](#reading-level-3) · [LEVEL 4 - Advanced](#reading-level-4) · [LEVEL 5 - Expert](#reading-level-5)
