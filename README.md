@@ -21,7 +21,7 @@
   <source media="(max-width: 600px)" srcset="assets/readme/flow-ko-light-mobile.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/readme/flow-ko-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="assets/readme/flow-ko-light.svg" />
-  <img src="assets/readme/flow-ko-light.svg" alt="Face CT Transfer Project: 공개 얼굴 모델 → LFW 쌍 평가 → 실측 · CT 전이 준비" width="100%" />
+  <img src="assets/readme/flow-ko-light.svg" alt="얼굴 모델·LFW: TopoFR-R200 · Glint360K → LFW 쌍 비교: 6,000쌍 · 10-fold 평가 → 실측·전이 준비: IJB-C 미측정 · CT 준비" width="100%" />
 </picture>
 <!-- readme-header32:end -->
 

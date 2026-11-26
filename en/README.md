@@ -22,7 +22,7 @@
   <source media="(max-width: 600px)" srcset="../assets/readme/flow-en-light-mobile.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="../assets/readme/flow-en-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="../assets/readme/flow-en-light.svg" />
-  <img src="../assets/readme/flow-en-light.svg" alt="Face CT Transfer Project: Public face models → LFW pair evaluation → Measurements · CT preparation" width="100%" />
+  <img src="../assets/readme/flow-en-light.svg" alt="Face models and LFW: TopoFR-R200 · Glint360K → LFW pair evaluation: 6,000 pairs · 10-fold evaluation → Measurements and transfer: IJB-C not measured; CT in preparation" width="100%" />
 </picture>
 <!-- readme-header32:end -->
 
