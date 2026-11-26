@@ -6,6 +6,8 @@
 
 # 1 단계 2차·얼굴 벤치마크와 실시간 상태
 
+[화면 통합 전체 비교](화면통합_비교/README.md)
+
 <!-- reading-levels17:start -->
 | 읽기 수준 | 설명의 초점 |
 | --- | --- |
@@ -21,6 +23,10 @@
 <a id="reading-level-1"></a>
 
 ## LEVEL 1 - Beginner
+
+### 화면 보완
+
+화면은 기존 실험 상태와 허용된 로그를 읽습니다. 입체 모형은 과정 설명이며 성능이나 진행률을 뜻하지 않습니다. 밝은 화면과 어두운 화면을 선택할 수 있습니다.
 
 <!-- semantic-revision17:level-1:start -->
 
@@ -250,6 +256,10 @@ IJB-C는 외부 서비스 할당량 대기입니다.
 
 ## LEVEL 2 - Explorer
 
+### 화면 보완
+
+공식 Astryx React 버튼과 Rust가 생성한 테마 CSS를 기존 상태·로그 조회 및 3D 화면에 연결합니다. LFW 직접 측정과 IJB-C 저자 보고는 따로 표시합니다.
+
 <!-- semantic-revision17:level-2:start -->
 
 <a id="semantic-protocol-level-2"></a>
@@ -477,6 +487,10 @@ LUNA25 정상 클래스 부재와 IQ 환자 매핑 미확인이 남습니다. �
 <a id="reading-level-3"></a>
 
 ## LEVEL 3 - Practitioner
+
+### 화면 보완
+
+나눔고딕 700과 흰색·민트 배치에서 탐색·테마·새로고침·단계 선택을 사용할 수 있습니다. 상태가 오래되거나 연결이 실패하면 표시를 확인합니다. 상태 데이터는 공개 소스와 별도로 준비해야 합니다. [화면 실행 안내](dashboard/화면_실행안내.md)를 확인하세요.
 
 <!-- semantic-revision17:level-3:start -->
 
@@ -706,6 +720,10 @@ IJB-C는 외부 서비스 할당량 대기입니다.
 
 ## LEVEL 4 - Advanced
 
+### 화면 보완
+
+기존 2차 `dashboard/server.py`와 `benchmark.status`의 읽기 전용 경계를 유지합니다. 화면 소스·패키지 잠금·생성 CSS를 같은 차수에 배치합니다. 테마를 다시 만들 때는 [Astryx Theme Engine](https://github.com/PUVKID/AstryxThemeEngine)을 빌드하고 `ASTRYX_THEME_EXECUTABLE`에 실행 파일을 지정하며 프런트 의존성을 설치합니다. 별도 화면 진입점은 `FACE_CT_STATE_DIR`를 요구하고 기존 서버 프로세스 기록을 교체하지 않습니다.
+
 <!-- semantic-revision17:level-4:start -->
 
 <a id="semantic-protocol-level-4"></a>
@@ -933,6 +951,10 @@ IJB-C는 외부 서비스 할당량 대기입니다.
 <a id="reading-level-5"></a>
 
 ## LEVEL 5 - Expert
+
+### 화면 보완
+
+기존 Astryx 0.7.17 적용 화면은 Rust 테마 생성과 양 테마·390px 및 1440px 조작을 별도로 검증했습니다. 2차 경로의 별도 읽기 전용 서버에서 화면과 상태 API HTTP 200, 제목·탐색·공식 버튼을 확인했습니다. 전체 환경과 연구 성능의 검증을 대신하지 않습니다. 연구 데이터·모델·로그는 공개하지 않습니다.
 
 <!-- semantic-revision17:level-5:start -->
 

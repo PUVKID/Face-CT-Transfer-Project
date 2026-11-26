@@ -123,7 +123,7 @@ Actual runtime rendering at mobile sizes and with reduced motion remained unveri
 | --- | --- | --- |
 | Stage 1 Revision 1 | [Materials](../1단계/1차) | [Synthetic-diagnostic overview (Korean source)](../1단계/1차/reports/총괄_보고서.md)<br>[Initial comparison (Korean source)](../docs/INITIAL_DIFF.md) |
 | Stage 2 Revision 1 | [Materials](../2단계/1차) | [Earlier CT preparation and execution record (Korean source)](../2단계/1차/README.md)<br>[Full comparison at that time (Korean source)](../docs/STAGE2_PREPARATION_DIFF.md) |
-| Stage 1 Revision 2 | [Materials](../1단계/2차) | [New face model, measured LFW results, and live dashboard (Korean source)](../1단계/2차/README.md)<br>[Full comparison since the previous public baseline (Korean source)](../docs/STAGE1_REVISION2_DIFF.md) |
+| Stage 1 Revision 2 | [Materials](../1단계/2차) | [New face model, measured LFW results, and live dashboard (Korean source)](../1단계/2차/README.md)<br>[Full comparison since the previous public baseline (Korean source)](../docs/STAGE1_REVISION2_DIFF.md) <br>[Dashboard update comparison (Korean source)](../1단계/2차/화면통합_비교/README.md) |
 
 The earlier AdaFace CT run was stopped at the user's request; originals, checkpoints, and partial results are preserved. “Running” labels in historical documents describe their own time and do not instruct a current resume.
 

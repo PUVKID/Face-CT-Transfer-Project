@@ -1,0 +1,35 @@
+/* Rust에서 생성한 Astryx 프로젝트 테마: light */
+:root,[data-theme="light"],[data-mode="light"] {
+  color-scheme: light;
+  --color-background-body: #FFFFFF; --color-background-surface: #F2FBF7;
+  --color-background-card: #F2FBF7; --color-text-primary: #10212A;
+  --color-text-secondary: #657B80; --color-border: #DCE9E4;
+  --color-border-emphasized: #00B580; --color-primary: #00B580;
+  --color-background-primary: #00B580; --color-text-on-primary: #000000;
+  --color-background-hover: #E1F6EF; --color-background-selected: #D0F1E6;
+  --color-text-disabled: #98A4A5;
+  --font-family-body: 'NanumGothic', 'Nanum Gothic', 'Malgun Gothic', sans-serif;
+  --font-family-heading: var(--font-family-body); --font-weight-body: 700;
+  --spacing-1: 4px; --spacing-2: 8px; --spacing-3: 12px; --spacing-4: 16px;
+  --spacing-5: 20px; --spacing-6: 24px; --spacing-8: 32px;
+  --radius-inner: 6px; --radius-element: 10px; --radius-container: 16px;
+  --astryx-control-height: 44px; --astryx-focus-width: 2px;
+}
+
+/* Rust에서 생성한 Astryx 프로젝트 테마: dark */
+[data-theme="dark"],[data-mode="dark"] {
+  color-scheme: dark;
+  --color-background-body: #132421; --color-background-surface: #1D322D;
+  --color-background-card: #1D322D; --color-text-primary: #E6F5ED;
+  --color-text-secondary: #A4C3B8; --color-border: #38564B;
+  --color-border-emphasized: #62D9B5; --color-primary: #62D9B5;
+  --color-background-primary: #62D9B5; --color-text-on-primary: #000000;
+  --color-background-hover: #223E37; --color-background-selected: #274940;
+  --color-text-disabled: #6D807A;
+  --font-family-body: 'NanumGothic', 'Nanum Gothic', 'Malgun Gothic', sans-serif;
+  --font-family-heading: var(--font-family-body); --font-weight-body: 700;
+  --spacing-1: 4px; --spacing-2: 8px; --spacing-3: 12px; --spacing-4: 16px;
+  --spacing-5: 20px; --spacing-6: 24px; --spacing-8: 32px;
+  --radius-inner: 6px; --radius-element: 10px; --radius-container: 16px;
+  --astryx-control-height: 44px; --astryx-focus-width: 2px;
+}
