@@ -1,3 +1,7 @@
+<!-- language-choice:start -->
+🔵 **한국어** · [English overview](../../en/README.md)
+<!-- language-choice:end -->
+
 <a id="-1단계-2차--얼굴-벤치마크와-실시간-상태"></a>
 
 # 1 단계 2차·얼굴 벤치마크와 실시간 상태

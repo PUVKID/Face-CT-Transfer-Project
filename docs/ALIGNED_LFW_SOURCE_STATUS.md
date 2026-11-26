@@ -1,3 +1,7 @@
+<!-- language-choice:start -->
+🔵 **한국어** · [English overview](../en/README.md)
+<!-- language-choice:end -->
+
 <a id="-공식-정렬-lfw-출처와-확보-범위"></a>
 
 # 공식 정렬 LFW 출처와 확보 범위

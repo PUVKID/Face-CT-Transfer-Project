@@ -1,3 +1,7 @@
+<!-- language-choice:start -->
+🔵 **한국어** · [English overview](../../../en/README.md)
+<!-- language-choice:end -->
+
 # 공식 ZIP의 단일 LFW 파일 획득
 
 <!-- reading-levels17:start -->

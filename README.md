@@ -1,6 +1,30 @@
 <a id="-face-ct-transfer-project"></a>
 
-# Face CT Transfer Project
+<!-- readme-header32:start -->
+<a name="face-ct-transfer-project"></a>
+<p align="center"><img src="assets/readme/icon.svg" alt="" width="72" height="72" /></p>
+<h1 align="center" id="project-title">Face CT Transfer Project</h1>
+<p align="center">얼굴 모델 평가와 CT 전이 준비</p>
+<p align="center">
+  <a href="README.md"><img src="assets/readme/language-ko-active.svg" alt="한국어 · 현재 언어" width="126" height="32" /></a>
+  <a href="en/README.md"><img src="assets/readme/language-en-link.svg" alt="English" width="126" height="32" /></a>
+</p>
+<p align="center">
+  <a href="docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A81.md"><img src="assets/readme/level-1.svg" alt="LEVEL 1 - Beginner" width="92" height="32" /></a>
+  <a href="docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A82.md"><img src="assets/readme/level-2.svg" alt="LEVEL 2 - Explorer" width="92" height="32" /></a>
+  <a href="docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A83.md"><img src="assets/readme/level-3.svg" alt="LEVEL 3 - Practitioner" width="92" height="32" /></a>
+  <a href="docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A84.md"><img src="assets/readme/level-4.svg" alt="LEVEL 4 - Advanced" width="92" height="32" /></a>
+  <a href="docs/%EC%9D%BD%EA%B8%B0%EC%95%88%EB%82%B4/%EB%A0%88%EB%B2%A85.md"><img src="assets/readme/level-5.svg" alt="LEVEL 5 - Expert" width="92" height="32" /></a>
+</p>
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/readme/flow-ko-dark-mobile.svg" />
+  <source media="(max-width: 600px)" srcset="assets/readme/flow-ko-light-mobile.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/flow-ko-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/readme/flow-ko-light.svg" />
+  <img src="assets/readme/flow-ko-light.svg" alt="Face CT Transfer Project: 공개 얼굴 모델 → LFW 쌍 평가 → 실측 · CT 전이 준비" width="100%" />
+</picture>
+<!-- readme-header32:end -->
+
 
 최신 실측: LFW 6,000 쌍·10fold 정확도 **99.9%**(소수 첫째 자리 반올림, 원값 99.85%). 저자 보고 99.87% 대비 −0.02%p이며 독립 재계산이 일치했습니다. IJB-C는 미측정이고 입력 동일성의 한계가 남아 있습니다.
 
